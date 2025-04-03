@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="product-detail">
+            <header class="header">
+                <!-- Imagen del producto con el boton de regreso y de like -->
+                 <a href="../index.html"><div class="hero"></div></a>
+                
+            </header>
+
+            <!-- Detalles del producto -->
+            <main id="main">
+                <!-- Nombre del producto y su rating -->
+                <div class="product">
+                    <h1 class="name">Light Dress Bless</h1>
+                    <p class="rate">5.0 (7.932 reviews)</p>
+                </div>
+
+                <!-- Contador de productos -->
+                <div class="cant-products">
+                    <button class="-"></button>
+                    <p class="number">1</p>
+                    <button class="+"></button>
+                </div>
+
+                <!-- Informacion del producto -->
+                <div class="product-info">
+                    <p>Its simple and elegant shape makes it perfect for
+                        those of you who like you who want minimslist
+                        clothes
+                    </p>
+                    <button id="open_dialog" class="read-more">Read More...</button>
+                    <dialog aria-labelledby="dialog_title" aria-describedby="dialog_description">
+                        <img src="https://native-dialog.surge.sh/location-service.svg" alt="Illustration of Location Services" />
+                        <h2 id="dialog_title" class="h2">Use location services?</h2>
+                        <p id="dialog_description">
+                          In order to give directional instructions, we kindly ask you to turn
+                          on the location services.
+                        </p>
+                        <div class="flex flex-space-between">
+                          <button id="close_dialog">Close</button>
+                          <button id="confirm_dialog" class="cta">Confirm</button>
+                        </div>
+                      </dialog>
+                </div>
+
+                <!-- Eleccion de tamano y colores -->
+                <div class="choose">
+
+                    <div class="sizes">
+                        
+                        <h3>Choose Size</h3>
+                        
+                        <div class="items">
+                        <button class="size-item">S</button>
+                        <button class="size-item">M</button>
+                        <button class="size-item">L</button>
+                        <button class="size-item">XL</button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="colors">
+
+                        <h3>Color</h3>
+
+                        <div class="items-color">
+                        <button class="color-item"></button>
+                        <button class="color-item"></button>
+                        <button class="color-item"></button>
+                        </div>
+                        
+
+                    </div>
+                    
+                </div>
+
+                <!-- Footer/Boton de agregar al carrito -->
+                <a href="checkout.html">
+                    <footer class="footer">
+                        <img src="../storage/font/img/cart-detail.svg" alt="Carrito Icono">
+                        <p>Add to Cart | $162.99 <h5>$190.99</h5></p>
+                    </footer>
+                </a>
+            </main>
+        </div>
+    </div>
+    
+    <img src="../storage/font/img/iphone.svg" alt="Iphone bar" class="iphone-footer">
+    <script src="../js/detail.js"></script>
+</body>
+</html>

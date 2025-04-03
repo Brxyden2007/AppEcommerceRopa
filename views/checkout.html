@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="menu-items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Encabezado de la pagina -->
+    <header class="header">
+        <!-- Boton regreso -->
+        <a href="detail.html"><button class="back"></button></a>
+        
+        <!-- Titulo -->
+        <h1 class="title">Checkout</h1>
+        <!-- Boton que despliega una barra de navegacion en forma de hamburguesa-->
+        <button class="nav-btn" id="nav-btn"></button>
+    </header>
+
+    <!-- Contenedor con el contenido principal -->
+    <main class="main-content">
+        <!-- Seccion con los productos en el carrito -->
+        <section class="cart-products">
+            <!-- Producto 1 -->
+            <div class="products">
+                <!-- Foto del producto -->
+                <div class="product-img"></div>
+                <!-- Detalles del producto -->
+                <div class="product-details">
+                    <h2>Modern light clothes</h2>
+                    <h5>Dress modern</h5>
+                    <p class="price">$212.99</p>
+                </div>
+                <!-- 3 puntos de settings y contador de productos -->
+                <div class="product-setting">
+                    <button class="setting"></button>
+                    <button class="-"></button>
+                    <p class="number">4</p>
+                    <button class="+"></button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="products">
+                <!-- Foto del producto -->
+                <div class="product-img"></div>
+                <!-- Detalles del producto -->
+                <div class="product-details">
+                    <h2>Modern light clothes</h2>
+                    <h5>Dress modern</h5>
+                    <p class="price">$162.99</p>
+                </div>
+                <!-- 3 puntos de settings y contador de productos -->
+                <div class="product-setting">
+                    <button class="setting"></button>
+                    <button class="-"></button>
+                    <p class="number">1</p>
+                    <button class="+"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de metodos de pago -->
+        <section class="method-payment">
+            <!-- Subtitulo de la seccion -->
+            <h2 class="method-title">Shopping Information</h2>
+            <!-- Contenedor para elegir metodo de pago -->
+            <div class="method-choose">
+                <div class="icon-visa"></div>
+                <p>**** **** **** 2143</p>
+                <div class="arrow-down"></div>
+            </div>
+        </section>
+
+        <!-- Seccion total a pagar -->
+        <section class="total-amount">
+            <div class="summary-item">
+                <span class="label">Total (<span class="items-count">9 items</span>)</span>
+                <span class="amount">$1,014.95</span>
+            </div>
+        
+            <div class="summary-item">
+                <span class="label">Shipping Fee</span>
+                <span class="amount">$0.00</span>
+            </div>
+        
+            <div class="summary-item">
+                <span class="label">Discount</span>
+                <span class="amount">$0.00</span>
+            </div>
+            <hr>
+            <div class="summary-item">
+                <span class="label">Sub Total</span>
+                <span class="amount">$1,014.95</span>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer/Boton Pagar -->
+    <footer class="footer">
+        <button class="pay">Pay</button>
+    </footer>
+    <script src="../js/checkout.js"></script>>
+</body>
+</html>
