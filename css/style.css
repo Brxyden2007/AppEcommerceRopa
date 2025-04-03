@@ -207,7 +207,6 @@ body {
     }
 
 }
-
 @media (max-width: 500px){
     .navbar-container input[type="checkbox"]:checked ~ .logo{
         display: none;
