@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <link rel="icon" type="image/png" href="img/iconPage.webp">
+    <link rel="icon" type="image/png" href="img/iconPage.webp"> <!--Icono para la pagina web-->
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -14,8 +14,12 @@
         <div class="product-detail">
             <header class="header">
                 <!-- Imagen del producto con el boton de regreso y de like -->
-                 <a href="../index.html"><div class="hero"></div></a>
-                
+                <div class="hero"></div></a>
+                <a href="../index.html" class="hero-back"></a>
+                <div style="position: relative;">
+                    <div id="iconSave" class="heroforicon"></div>
+                </div>
+                <div id="messageSave" class="message"></div>
             </header>
 
             <!-- Detalles del producto -->
@@ -24,6 +28,7 @@
                 <div class="product">
                     <h1 class="name">Light Dress Bless</h1>
                     <p class="rate">5.0 (7.932 reviews)</p>
+                    <p class="colorview">Vistas por 100 personas</p>
                 </div>
 
                 <!-- Contador de productos -->
@@ -98,5 +103,6 @@
     
     <img src="/storage/img/iphone.svg" alt="Iphone bar" class="iphone-footer">
     <script src="/js/components/detail.js"></script>
+    <script src="/js/components/saveItem.js"></script>
 </body>
 </html>

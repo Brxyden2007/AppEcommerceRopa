@@ -1,7 +1,5 @@
-/* CSS Variables */
 @import url('variables.css');
-  
-  /* Reset and Base Styles */
+
   * {
     margin: 0;
     padding: 0;
@@ -19,7 +17,7 @@
     flex-direction: column;
   }
   
-  /* iPhone Status Bar */
+  /* Barra iPhone */
   .iphone-header {
     width: 100%;
     height: auto;
@@ -29,7 +27,7 @@
     z-index: 1000;
   }
   
-  /* Header Styles */
+  /* Estilos del Header*/
   .header {
     padding: 50px 20px 15px;
     position: relative;
@@ -63,7 +61,7 @@
     box-shadow: var(--shadow);
   }
   
- /* Search Box */
+ /* Barra de Busqueda */
 .search-box {
     display: flex;
     margin-bottom: 10px;
@@ -134,7 +132,7 @@
     background-color: var(--light-gray);
     border-radius: 0.25rem;
 }
-
+/* Boton de Filtro */
   .filter-button {
     width: 44px;
     height: 44px;
@@ -147,14 +145,14 @@
     cursor: pointer;
     box-shadow: var(--shadow);
   }
-  
+
   .filter-button::after {
     content: url(/storage/img/Main-Icon.svg);
     font-size: 18px;
     color: var(--white);
   }
   
-  /* Navigation Categories */
+  /* Categorias Navegacion */
   .nav-bar {
     margin-bottom: 20px;
     overflow-x: auto;
@@ -238,9 +236,9 @@
   }
   
 .product-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; 
   }
 
   .products-container a{
@@ -249,7 +247,6 @@
   
   /* Product Image and Details */
   .product-card:hover::before {
-    content: "♥";
     position: absolute;
     top: 10px;
     right: 10px;
