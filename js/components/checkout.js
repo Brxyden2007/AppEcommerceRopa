@@ -42,10 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agregar evento de clic
     payButton.addEventListener("click", function () {
         Swal.fire({
-            title: "Processing Payment...",
-            text: "Please wait while we confirm your payment.",
-            icon: "success",
-            draggable: true
-        });
+            title: "Payment Complete!",
+            text: "Thank you for your purchase! See you later and we want you again!",
+            icon: "success"
+          });
     });
 });
