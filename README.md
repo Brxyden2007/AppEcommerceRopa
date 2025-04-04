@@ -36,7 +36,7 @@ Tratar de replicar una compra online responsiva, atractiva y dinamica para produ
 - Calculador de cantidad y precio
 - Poder observar cuanto se puede añadir
 
-### + Página de Carrito
+### - Página de Carrito
 - Resumen detallado de compra
 - Gestión de cantidades en tiempo real
 - Múltiples opciones de pago
@@ -47,18 +47,18 @@ Tratar de replicar una compra online responsiva, atractiva y dinamica para produ
 - Calculadora de costos (envíos, descuentos)
 - Confirmación de compra con modal
 
-##  Tecnologías Utilizadas
+## + Tecnologías Utilizadas
 | Tecnología | Uso |
 |------------|-----|
 | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) | Control de versiones |
 | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) | Para el Diseño de interfaces |
 | ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white) | Despliegue continuo |
-**Recursos Obligatorios:**
-- ![Componente de búsqueda](https://www.facebook.com/story.php?story_fbid=122161474094048970)
+**++Recursos Obligatorios:**
+- ![Componente de búsqueda](https://www.facebook.com/story.php?story_fbid=122161474094048970&id=61551469102959&mibextid=WC7FNe&rdid=ARxpghKfxeRvWZ3p)
 - ![Modal "Ver más" usado](https://codepen.io/ckozalla/pen/LYLaVZW)
 - ![Menú hamburguesa Movil](https://codepen.io/sanketbodke/pen/LYyzzYb)
 
-##  Instalación Local
+## + Instalación Local
 ```bash
 # Clonar repositorio
 git clone https://github.com/Brxyden2007/AppEcommerceRopa.git
