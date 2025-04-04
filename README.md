@@ -53,7 +53,8 @@ Tratar de replicar una compra online responsiva, atractiva y dinamica para produ
 | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) | Control de versiones |
 | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) | Para el Diseño de interfaces |
 | ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white) | Despliegue continuo |
-**++Recursos Obligatorios:**
+
+**Recursos Obligatorios:**
 - ![Componente de búsqueda](https://www.facebook.com/story.php?story_fbid=122161474094048970&id=61551469102959&mibextid=WC7FNe&rdid=ARxpghKfxeRvWZ3p)
 - ![Modal "Ver más" usado](https://codepen.io/ckozalla/pen/LYLaVZW)
 - ![Menú hamburguesa Movil](https://codepen.io/sanketbodke/pen/LYyzzYb)
