@@ -1,47 +1,49 @@
-const fashionList = [
-    "Camisetas",
-    "Pantalón",
-    "Vestido",
-    "Zapatos",
-    "Vestidos",
-    "Vaqueros",
-    "Guantes",
+const productList = [
+    "Dress Yellow",
+    "Dark Clothes",
+    "Light Dress Bless",
+    "Modern Light Clothes"
 ];
 
-const resultBox = document.querySelector(".results");
-const inputBox = document.querySelector(".search-bar");
-function selectInput(item) {
-    inputBox.value = item.innerText; // Actualizar el valor del campo de búsqueda
-    resultBox.innerHTML = ""; // Limpiar los resultados
+const resultBox = document.querySelector(".results"); // Cambiado a .results
+const inputBox = document.querySelector(".search-bar"); // Cambiado a .search-bar
+
+const displayResults = function (results) {
+    if (results.length === 0) {
+        resultBox.innerHTML = '';
+        return;
+    }
+    
+    const resultHTML = results.map(function (product) {
+        return `<li onclick="selectInput(this)">${product}</li>`;
+    });
+    
+    resultBox.innerHTML = '<ul>' + resultHTML.join('') + '</ul>';
 }
 
-const displayResults = function (result) {
-    const resultHTML = result.map(function (item) {
-        return `<li onclick="selectInput(this)">
-            ${item}
-        </li>`;
-    });
-
-    // Mostrar los resultados en el contenedor
-    resultBox.innerHTML = '<ul>' + resultHTML.join("") + '</ul>';
-};
-
-// Evento de teclado para filtrar resultados
 inputBox.onkeyup = function (e) {
     let result = [];
-    const input = inputBox.value.toLowerCase(); // Obtener el texto ingresado en minúsculas
+    const input = inputBox.value.toLowerCase();
 
     if (input.length === 0) {
-        resultBox.innerHTML = ""; // Limpiar resultados si el campo está vacío
+        resultBox.innerHTML = '';
+        resultBox.style.display = 'none';
+        return;
     }
 
-    if (input.length) {
-        // Filtrar la lista de moda para encontrar coincidencias
-        result = fashionList.filter((item) => {
-            return item.toLowerCase().includes(input);
-        });
+    result = productList.filter((product) => {
+        return product.toLowerCase().includes(input);
+    });
 
-        // Mostrar los resultados filtrados
+    if (result.length > 0) {
+        resultBox.style.display = 'block';
         displayResults(result);
+    } else {
+        resultBox.style.display = 'none';
     }
-};
+}
+
+function selectInput(element) {
+    inputBox.value = element.innerText;
+    resultBox.style.display = 'none';
+}

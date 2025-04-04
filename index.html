@@ -1,58 +1,128 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <title> Ecommerce</title>
+    <link rel="icon" type="image/png" href="storage/img/iconPage.webp">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="icon" type="image/png" href="img/iconPage.webp">
-    <title>Ecommerce Ropa</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container container">
-            <input type="checkbox" name="" id="">
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <div class="profile-container">
-                    <img src="img/vsrbvp5zgl1d1.jpeg" alt="Foto de Perfil" class="profile-image">
-                </div>
-                <li><p class="userText">Bienvenido, Brxyden2007 👋</p></li>
-                <li><a href="index.html">Principal Fondo</a></li>
-                <li><a href="views/checkout.html">Inicio</a></li>
-                <li><a href="#">Carrito de Compras</a></li>
-                <li><a href="#">Lista de Favoritos</a></li>
-                <li><a href="#">Perfil</a></li>
-            </ul>
-            <h1 class="logo">Ecommerce</h1>
-        </div>
-    </nav>
-</body>
-</html>
-    <div class="search-box">
-        <div class="row">
-            <input
-                type="text"
-                class="search-bar"
-                placeholder="Search..."
+    <!-- SVG IPHONE -->
+     <img src="storage/img/iphone-home.svg" alt="Icono de carga y hora iphone" class="iphone-header">
+    <!-- Encabezado de la pagina -->
+    <header class="header">
+        <!-- Saludo Inicial -->
+        <div class="saludo">Hello, Welcome👋</div>
+
+        <!-- Nombre del usuario -->
+        <div class="name"></div>
+
+         <!-- Foto de perfil -->
+        <img src="storage/img/Profile.png" 
+        alt="Foto de perfil" 
+        class="profile-pic"
+        >
+
+        <!-- Barra de busqueda -->
+        <div class="search-box">
+            <div class="row">
+                
+
+                <input type="text" 
+                class="search-bar" 
+                placeholder="🔍 Search clothes..." 
                 autocomplete="off"
-            >
-            <button>
-                <!-- svg -->
-            </button>
+                >
+
+            </div>
+
+            <div class="results"></div>
+
+            <!-- Boton para filtros -->
+            <button class="filter-button"></button>
+            
         </div>
-        <div class="results"></div>
-    </div>
-    <div class="imgPrincipal">
-        <img src="img/Product 1.png" alt="Foto 1">
-        <img src="img/Product 2.png" alt="Foto 2">
-        <img src="img/Product 3.png" alt="Foto 3">
-        <img src="img/Product 4.png" alt="Foto 4">
-    </div>
+
+        
+
+        <!-- Barra para navegar categorias de ropa -->
+        <nav class="nav-bar">
+            <div class="nav-categories">
+                <ul class="categories">
+                    <li class="categorie-item">All items</li>
+                    <li class="categorie-item">Dress</li>
+                    <li class="categorie-item">T-Shirt</li>
+                    <li class="categorie-item">Pants</li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal de la pagina -->
+    <main class="main-content">
+        <!-- Contenedor de productos -->
+        <a href="views/detail.html">
+            <div class="products-container">
+
+                <!-- Cards -->
+                <div class="product-card">
+                    <img src="storage/img/Product1.png" alt="Product Image" class="product-image" href="views/detail.html">             
+                    <h2 class="product-name">Modern Light Clothes</h2>
+                    <p class="product-categorie">T-Shirt</p>
+                    <p class="product-price">$212.99</p>
+                </div>
+                
+                <div class="product-card">
+                    <a href="views/detail.html">
+                        <img src="storage/img/Product2.png" alt="Product Image" class="product-image">
+                    </a>
+                    <h2 class="product-name">Light Dress Bless</h2>
+                    <p class="product-categorie">Dress modern</p>
+                    <p class="product-price">$162.99</p>
+                </div>
+    
+                <div class="product-card">
+                    <a href="views/detail.html">
+                        <img src="storage/img/Product3.png" alt="Product Image" class="product-image">
+                    </a>             
+                    <h2 class="product-name">Dark Clothes</h2>
+                    <p class="product-categorie">T-Shirt modern</p>
+                    <p class="product-price">$312.99</p>
+                </div>
+    
+                <div class="product-card">
+                    <a href="views/detail.html">
+                        <img src="storage/img/Product4.png" alt="Product Image" class="product-image">
+                    </a>
+                    <h2 class="product-name">Dress Yellow</h2>
+                    <p class="product-categorie">Dress</p>
+                    <p class="product-price">$405.99</p>
+                </div>
+            </div>
+        </a>     
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <!-- Menu movil -->
+        <div class="nav-menu">
+            <ul class="menu-items">
+                <li class="menu-item">Home</li>
+                <li class="menu-item">Carrito</li>
+                <li class="menu-item">Favorites</li>
+                <li class="menu-item">Profile</li>
+            </ul>
+        </div>
+
+        
+
+    </footer>
+
+    <img src="storage/img/iphone.svg" alt="Iphone bar" class="iphone-footer">
     <script src="js/components/main.js"></script>
 </body>
 </html>
