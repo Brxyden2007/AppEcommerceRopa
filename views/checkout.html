@@ -4,81 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="icon" type="image/png" href="img/iconPage.webp">
+    <link rel="icon" type="image/png" href="img/iconPage.webp"> <!-- Icono para la pagina web -->
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/checkout.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-container">
+        <div class="navbar-container"> <!-- Se agrega el menu principal del checkout (Se agrega esto ya que a la hora de salir o demas, al darle a las 3 rayas tendras informacion de donde ir, solo el Home / Inicio es funcional)-->
             <ul class="menu-items">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="/index.html">Home</a></li> <!-- Como se mencionó anteriormente, solo este es funcional y nos llevará al inicio de todo-->
+                <li><a href="#">Products</a></li> <!-- Aqui se pueden observar los productos -->
+                <li><a href="#">Categories</a></li> <!-- Aqui se pueden observar las categorias -->
+                <li><a href="#">Cart</a></li> <!-- Aqui se pueden observar los productos que has agregado al carrito -->
+                <li><a href="#">Favorites</a></li> <!-- Aqui se pueden observar los productos que has agregado a favoritos -->
+                <li><a href="#">About Us</a></li> <!-- Aqui se puede observar informacion sobre la tienda -->
+                <li><a href="#">Account</a></li> <!-- Aqui se puede observar informacion de tu cuenta -->
             </ul>
         </div>
     </nav>
-    <!-- Encabezado de la pagina -->
     <header class="header">
-        <!-- Boton regreso -->
-        <a href="detail.html"><button class="back"></button></a>
-        
-        <!-- Titulo -->
+        <!-- Se implementó la opcion de hacer que haya un botón de regreso, asi el usuario no tendría que volver a abrir la pagina si no darle directamente solo al boton para regresar -->
+        <a href="detail.html"><button class="back"></button></a> <!-- El class "back" se ubica en el checkout y como se ve en el href, este regresa a lo que esta antes que vendría siendo el apartado de detalles (detail.html)-->
+        <!-- Titulo de la pagina -->
         <h1 class="title">Checkout</h1>
-        <!-- Boton que despliega una barra de navegacion en forma de hamburguesa-->
-        <button class="nav-btn" id="nav-btn"></button>
+        <button class="nav-btn" id="nav-btn"></button> <!-- Este boton se usa para desplegar el menu de hamburguesas que nos dará las opciones que podemos ejecutar de los diferentes apartados-->
     </header>
 
-    <!-- Contenedor con el contenido principal -->
+    <!-- Aquí comienza lo que es el contenido principal de la pagina -->
     <main class="main-content">
-        <!-- Seccion con los productos en el carrito -->
-        <section class="cart-products">
-            <!-- Producto 1 -->
+        <!-- Productos introducidos en el carrito de compras -->
+        <section class="cart-products"> <!-- Se usa una section ya que claramente es una sección de apartado de ropa que se escogio-->
+            <!-- Detalles del producto 1 -->
             <div class="products">
-                <!-- Foto del producto -->
+                <!-- Su imagen -->
                 <div class="product-img"></div>
-                <!-- Detalles del producto -->
+                <!-- Nombre, tipo, precio -->
                 <div class="product-details">
                     <h2>Modern light clothes</h2>
                     <h5>Dress modern</h5>
                     <p class="price">$212.99</p>
                 </div>
-                <!-- 3 puntos de settings y contador de productos -->
+                <!-- Aquí se introduce la cantidad -->
                 <div class="product-setting">
                     <button class="setting"></button>
                     <button class="-"></button>
                     <p class="number">4</p>
-                    <button class="+"></button>
+                    <button class="+"></button> <!-- Esta cantidad no esta del todo bien, ya que solo refleja el 4 y no es dinamica del todo.-->
                 </div>
             </div>
 
-            <!-- Producto 2 -->
+            <!-- Detalles del producto 2-->
             <div class="products">
-                <!-- Foto del producto -->
+                <!-- Su imagen  -->
                 <div class="product-img"></div>
-                <!-- Detalles del producto -->
+                <!-- Nombre, tipo y precio -->
                 <div class="product-details">
                     <h2>Light Dress Bless</h2>
                     <h5>Dress modern</h5>
                     <p class="price">$162.99</p>
                 </div>
-                <!-- 3 puntos de settings y contador de productos -->
+                <!-- Aquí se introduce la cantidad -->
                 <div class="product-setting">
                     <button class="setting"></button>
                     <button class="-"></button>
                     <p class="number">1</p>
-                    <button class="+"></button>
+                    <button class="+"></button> <!-- Esta cantidad no esta del todo bien, ya que solo refleja el 1 y no esta completa. -->
                 </div>
             </div>
         </section>
 
-        <!-- Seccion de metodos de pago -->
+        <!-- Metodos de pago -->
         <section class="method-payment">
-            <!-- Subtitulo de la seccion -->
-            <h2 class="method-title">Shopping Information</h2>
-            <!-- Contenedor para elegir metodo de pago -->
+            <h2 class="method-title">Shipping Information </h2>
+            <!-- Se usa el arrow-down como referencia a que se puede usar otro metodo de pago, pero el icon-visa esta para hacer referencia de que se esta usando como pago la VISA -->
             <div class="method-choose">
                 <div class="icon-visa"></div>
                 <p>**** **** **** 2143</p>
@@ -86,35 +84,35 @@
             </div>
         </section>
 
-        <!-- Seccion total a pagar -->
+        <!-- Esta seccion es usada para dar el total de pago -->
         <section class="total-amount">
             <div class="summary-item">
                 <span class="label">Total (<span class="items-count">9 items</span>)</span>
                 <span class="amount">$1,014.95</span>
             </div>
-        
-            <div class="summary-item">
+         
+            <div class="summary-item"> <!-- Es la sumatoria del Shipping Fee-->
                 <span class="label">Shipping Fee</span>
                 <span class="amount">$0.00</span>
             </div>
         
-            <div class="summary-item">
+            <div class="summary-item"> <!-- Sumatoria de los productos que estan en descuento -->
                 <span class="label">Discount</span>
                 <span class="amount">$0.00</span>
             </div>
-            <hr>
-            <div class="summary-item">
+            <hr> 
+            <div class="summary-item"> <!-- El subtotal de los productos a la hora de su pago-->
                 <span class="label">Sub Total</span>
                 <span class="amount">$1,014.95</span>
             </div>
         </section>
     </main>
     
-    <!-- Footer/Boton Pagar -->
+    <!-- Se establece la clase footer para hacer que haya un apartado que seria lo del pago -->
     <footer class="footer">
-        <button class="pay">Pay</button>
+        <button class="pay">Pay</button> <!-- Boton para pagar (Usado para hacer referencia de que se puede pagar y se implementa aqui el checkout.js con el Swal.fire que nos dará una pequeña "animacion" de que el pago se ha hecho) -->
     </footer>
-    <script src="/js/components/checkout.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/components/checkout.js"></script> <!-- Aqui se importa el archivo checkout.js y el Swal.fire (animacion de pago)-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Importa el Swal.fire y es donde se exporto este archivo -->
 </body>
 </html>

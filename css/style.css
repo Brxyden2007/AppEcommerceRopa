@@ -1,600 +1,578 @@
-@import url('variables.css');
+@import url('variables.css'); /* Importa la variable CSS de variables.css */
 
-  * {
+  * { /* Selecciona todos los elementos */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family)
+    box-sizing: border-box; /* Establece el box-sizing para que los elementos tengan un tamaño total de contenido */
+    font-family: var(--font-family) /* Utiliza la variable CSS --font-family */
+  }
+   
+  body { /* Selecciona el elemento body */
+    background-color: var(--secondary-color); /* Establece el color de fondo utilizando la variable CSS --secondary-color */
+    color: var(--text-color); /* Establece el color del texto utilizando la variable CSS --text-color */
+    padding: 0; /* Elimina el padding del elemento body */
+    margin: 0; /* Elimina el margen del elemento body */
+    min-height: 100vh; /* Establece la altura mínima del elemento body */
+    display: flex; /* Establece la propiedad display en flex */
+    flex-direction: column; /* Establece la propiedad flex-direction en column */
+  }
+  /*iPhone Barra*/
+  .iphone-header { /* Selecciona el elemento con la clase iphone-header */
+    width: 100%; /* Establece el ancho del elemento */
+    height: auto; /* Establece la altura del elemento en auto */
+    position: fixed; /* Establece la posición del elemento en fixed */
+    top: 0; /* Establece la posición vertical del elemento */
+    left: 0; /* Establece la posición horizontal del elemento */ 
+    z-index: 1000; /* Establece el índice de capa del elemento */
   }
   
-  body {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Barra iPhone */
-  .iphone-header {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  /* Estilos del Header*/
   .header {
-    padding: 50px 20px 15px;
-    position: relative;
+    padding: 50px 20px 15px; /* Establece el padding del elemento */
+    position: relative; /* Establece la posición del elemento en relative */
   }
   
-  .saludo {
-    color: var(--medium-gray);
-    font-size: 14px;
-    margin-bottom: 4px;
+  .saludo { 
+    color: var(--medium-gray); /* Establece el color del texto utilizando la variable CSS --medium-gray */
+    font-size: 14px; /* Establece el tamaño del texto */
+    margin-bottom: 4px; /* Establece el margen inferior del texto */
   }
   
   .name {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 20px; /* Establece el tamaño del texto */
+    font-weight: 700; /* Establece el peso del texto */
+    margin-bottom: 15px; /* Establece el margen inferior del texto */
   }
   
-  .name::after {
-    content: "Albert Stevano";
+  .name::after { /* Selecciona el elemento después del texto */
+    content: "Albert Stevano"; /* Establece el contenido del pseudo-elemento / Agrega el nombre del usuario*/
   }
   
-  .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    border: 2px solid var(--white);
-    box-shadow: var(--shadow);
+  .profile-pic { /* Selecciona el elemento con la clase profile-pic */
+    width: 40px; /* Establece el ancho del elemento */
+    height: 40px; /* Establece la altura del elemento */
+    border-radius: 50%; /* Establece el radio de redondeo del elemento */
+    object-fit: cover; /* Establece la propiedad object-fit en cover */
+    position: absolute; /* Establece la posición del elemento en absolute */
+    top: 50px; /* Establece la posición vertical del elemento */
+    right: 20px;  /* Establece la posición horizontal del elemento */
+    border: 2px solid var(--white); /* Establece el borde del elemento */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
+  }
+  /*Busqueda - La barra usada en el menu principal que empieza a buscar los elementos */
+.search-box { /* Selecciona el elemento con la clase search-box */
+    display: flex; /* Establece la propiedad display en flex */
+    margin-bottom: 10px; /* Establece el margen inferior del elemento */
+    position: relative;  /* Establece la posición del elemento en relative */
+    width: 100%; /* Establece el ancho del elemento */
+    gap: 5px; /* Establece el espacio entre los elementos */
   }
   
- /* Barra de Busqueda */
-.search-box {
-    display: flex;
-    margin-bottom: 10px;
-    position: relative; 
-    width: 100%;
-    gap: 5px;
+  .search-box .row { /* Selecciona el elemento con la clase row */
+    display: flex; /* Establece la propiedad display en flex */
+    gap: 0; /* Establece el espacio entre los elementos */
+    width: 90%; /* Establece el ancho del elemento */
+    flex-grow: 1; /* Establece la propiedad flex-grow en 1 */
+    gap: 0; /* Establece el espacio entre los elementos */
+  } 
+  
+  .search-bar { /* Selecciona el elemento con la clase search-bar */
+    flex-grow: 1; /* Establece la propiedad flex-grow en 1 */
+    padding: 12px 15px; /* Establece el relleno del elemento */
+    border-radius: var(--small-radius); /* Establece el radio de redondeo del elemento */
+    border: 1px solid var(--light-gray); /* Establece el borde del elemento */
+    background-color: var(--white); /* Establece el color de fondo del elemento */
+    font-size: 14px; /* Establece el tamaño del texto */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
+    position: inherit; /* Establece la posición del elemento en inherit */
   }
   
-
-  .search-box .row {
-    display: flex;
-    gap: 0;
-    width: 90%;
-    flex-grow: 1;
-    gap: 0;
-  }
-  
-  .search-bar {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border-radius: var(--small-radius);
-    border: 1px solid var(--light-gray);
-    background-color: var(--white);
-    font-size: 14px;
-    box-shadow: var(--shadow);
-    position: inherit;
-  }
-  
-  .search-bar::placeholder {
-    color: var(--medium-gray);
+  .search-bar::placeholder {  /* Selecciona el elemento placeholder */
+    color: var(--medium-gray); /* Establece el color del texto */
   }
 
-  .results {
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: calc(100% - 44px - 5px); 
+  .results { /* Selecciona el elemento con la clase results */
+    position: absolute; /* Establece la posición del elemento en absolute */
+    top: 100%;  /* Establece la posición vertical del elemento */
+    left: 0; /* Establece la posición horizontal del elemento */
+    width: calc(100% - 44px - 5px);  /* Establece el ancho del elemento */
     max-height: 20rem;
     overflow-y: auto;
-    background-color: var(--white);
-    border-radius: var(--small-radius);
-    box-shadow: var(--shadow);
-    z-index: 100; 
+    background-color: var(--white); /* Establece el color de fondo del elemento */
+    border-radius: var(--small-radius); /* Establece el radio de redondeo del elemento */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
+    z-index: 100;  /* Establece el nivel de z del elemento */ 
     margin-top: 5px;
-    display: none;
+    display: none; /* Establece la propiedad display en none */
 }
 
-.search-box.active .results {
-    display: block; 
+.search-box.active .results { /* Selecciona el elemento con la clase results cuando el elemento con la clase search-box tiene la clase active */
+    display: block; /* Establece la propiedad display en block */
 }
 
-.results ul {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 0;
+.results ul {   /* Selecciona el elemento ul */
+    display: flex; /* Establece la propiedad display en flex */
+    flex-direction: column; /* Establece la propiedad flex-direction en column */
+    list-style-type: none; /* Elimina el estilo de lista */
+    padding: 0; /* Elimina el relleno del elemento */
     margin: 0;
-    gap: 0.25rem;
+    gap: 0.25rem; /* Establece el espacio entre los elementos */
 }
 
-.results ul li {
+.results ul li { /* Selecciona el elemento li */
     list-style: none;
     border-radius: 0,25rem;
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.75rem; /* Establece el relleno del elemento */
 }
 
-.results ul li:hover {
-    background-color: var(--light-gray);
-    border-radius: 0.25rem;
+.results ul li:hover { /* Selecciona el elemento li cuando se hace hover */
+    background-color: var(--light-gray); /* Establece el color de fondo del elemento */
+    border-radius: 0.25rem; /* Establece el radio de redondeo del elemento */
 }
-/* Boton de Filtro */
+/* Boton del Filtro usado en el menu principal (no funcional) */
   .filter-button {
     width: 44px;
     height: 44px;
-    border-radius: var(--small-radius);
+    border-radius: var(--small-radius); /* Establece el radio de redondeo del elemento */
     border: none;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Establece el color de fondo del elemento */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: var(--shadow);
+    align-items: center; /* Alinea los elementos en el eje vertical */
+    justify-content: center; /* Alinea los elementos en el eje horizontal */
+    cursor: pointer; /* Establece el cursor en forma de mano */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
   }
 
-  .filter-button::after {
-    content: url(/storage/img/Main-Icon.svg);
-    font-size: 18px;
-    color: var(--white);
+  .filter-button::after { /* Selecciona el elemento después del elemento con la clase filter-button */
+    content: url(/storage/img/Main-Icon.svg); /* Establece el contenido del elemento */
+    font-size: 18px; /* Establece el tamaño del texto */
+    color: var(--white); /* Establece el color del texto */
   }
   
-  /* Categorias Navegacion */
-  .nav-bar {
-    margin-bottom: 20px;
+  .nav-bar { 
+    margin-bottom: 20px; /* Establece el margen inferior del elemento */
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; /* Establece el comportamiento del elemento cuando se hace scroll */
   }
   
-  .nav-categories {
-    width: 100%;
+  .nav-categories { /* Selecciona el elemento con la clase nav-categories */
+    width: 100%; /* Establece el ancho del elemento */
   }
   
   .categories {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    padding: 5px 0;
+    display: flex; /* Establece la propiedad display en flex */
+    list-style: none;  /* Elimina el estilo de lista */
+    gap: 10px; /* Establece el espacio entre los elementos */
+    padding: 5px 0; /* Establece el relleno del elemento */
   }
   
   .categorie-item {
-    padding: 10px 15px;
-    background-color: var(--white);
-    border-radius: var(--small-radius);
-    font-size: 14px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: var(--shadow);
-    cursor: pointer;
+    padding: 10px 15px; /* Establece el relleno del elemento */ 
+    background-color: var(--white); /* Establece el color de fondo del elemento */
+    border-radius: var(--small-radius); /* Establece el radio de redondeo del elemento */
+    font-size: 14px; /* Establece el tamaño del texto */
+    white-space: nowrap; /* Evita que el texto se ajuste a la altura del elemento */
+    display: flex; /* Establece la propiedad display en flex */
+    align-items: center; /* Alinea los elementos en el eje vertical */
+    gap: 5px; /* Establece el espacio entre los elementos */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
+    cursor: pointer; /* Establece el cursor en forma de mano */
   }
   
-  .categorie-item:first-child {
+  .categorie-item:first-child { /* Selecciona el primer elemento con la clase categorie-item */
     background-color: var(--primary-color);
     color: var(--white);
   }
   
-  /* Category Icons */
-  .categorie-item:nth-child(1)::before {
-    content: url(/storage/img/all.svg);
-    font-size: 1px;
+  .categorie-item:nth-child(1)::before { /* Usado para el primer elemento que es el de todo>  q za  < */
+    content: url(/storage/img/all.svg); /* Establece el contenido del elemento */
+    font-size: 1px; /* Establece el tamaño del texto */
   }
   
-  .categorie-item:nth-child(2)::before {
-    content: url(/storage/img/dress.svg);
-    font-size: 1px;
+  .categorie-item:nth-child(2)::before { /* Usado para el segundo elemento que es el de ropa */
+    content: url(/storage/img/dress.svg); /* Establece el contenido del elemento */
+    font-size: 1px; /* Establece el tamaño del texto */
   }
   
-  .categorie-item:nth-child(3)::before {
-    content: url(/storage/img/t-shirt.svg);
-    font-size: 1px;
+  .categorie-item:nth-child(3)::before { /* Usado para el tercer elemento que es el de camisas */
+    content: url(/storage/img/t-shirt.svg); /* Establece el contenido del elemento */
+    font-size: 1px; /* Establece el tamaño del texto */
   }
   
-  .categorie-item:nth-child(4)::before {
-    content: url(/storage/img/pants.svg);
-    font-size: 1px;
+  .categorie-item:nth-child(4)::before { /* Usado para el cuarto elemento que es el de pantalones */
+    content: url(/storage/img/pants.svg); /* Establece el contenido del elemento */
+    font-size: 1px; /* Establece el tamaño del texto */
   }
   
-  /* Main Content */
-  .main-content {
-    padding: 0 20px 80px;
-    overflow-y: auto;
+  .main-content { /* Selecciona el elemento con la clase de contenido principal*/
+    padding: 0 20px 80px; /* Establece el relleno del elemento */
+    overflow-y: auto; /* Establece el comportamiento de desplazamiento vertical */
   }
   
-  /* Products Container */
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  .products-container { /* Selecciona el elemento con la clase de contenedor de productos */
+    display: grid; /* Establece la propiedad display en grid */
+    grid-template-columns: repeat(2, 1fr); /* Establece el número de columnas y el ancho de cada columna */
+    gap: 15px; /* Establece el espacio entre los elementos */
   }
   
-  /* Product Card */
-  .product-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    position: relative;
-    box-shadow: var(--shadow);
-    display: flex;
+  .product-card { /* Selecciona el elemento con la clase de tarjeta de producto */
+    background-color: var(--white); /* Establece el color de fondo del elemento */
+    border-radius: var(--border-radius); /* Establece el radio de redondeo del elemento */
+    overflow: hidden; /* Establece el comportamiento de desbordamiento */
+    position: relative; /* Establece la posición del elemento */
+    box-shadow: var(--shadow); /* Establece la sombra del elemento */
+    display: flex; /* Establece la propiedad display en flex */
     flex-direction: column;
-    cursor: pointer;
-    height: 400px;
+    cursor: pointer; /* Establece el cursor en forma de mano */
+    height: 400px; /* Establece el alto del elemento */
   }
   
-.product-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
-    transition: all 0.3s ease; 
+.product-card:hover { /* Selecciona el elemento con la clase de tarjeta de producto cuando se hace clic encima */
+    box-shadow: 0 4px 20px black;  /* Establece la sombra del elemento cuando se hace clic encima */
+    transform: translateY(-2px); /* Establece la transformación del elemento */
+    transition: all 0.3s ease;  /* Establece la transición del elemento */
   }
 
-  .products-container a{
-    text-decoration: none;
+  .products-container a{ /* Selecciona el elemento con la clase de contenedor de productos */ 
+    text-decoration: none; /* Establece el texto sin subrayado */
   }
   
-  /* Product Image and Details */
-  .product-card:hover::before {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: var(--accent-color);
+  .product-card:hover::before { /* Selecciona el elemento con la clase de tarjeta de producto cuando se hace clic encima */
+    position: absolute; /* Establece la posición del elemento */
+    top: 10px; /* Establece la posición vertical del elemento */
+    right: 10px; /* Establece la posición horizontal del elemento */
+    font-size: 24px; /* Establece el tamaño del texto */
+    color: var(--black);
+    background-color: white; /* Establece el color del texto */
   }
   
-.product-card:nth-child(1) {
-    height: 350px;
+.product-card:nth-child(1) { /* Selecciona el primer elemento con la clase de tarjeta de producto */
+    height: 350px; /* Establece el alto del elemento */
   }
   
-  .product-card:nth-child(2) {
-    height: 350px;
+  .product-card:nth-child(2) { /* Selecciona el segundo elemento con la clase de tarjeta de producto */
+    height: 350px; /* Establece el alto del elemento */
+  } 
+  
+  .product-card:nth-child(3) { /* Selecciona el tercer elemento con la clase de tarjeta de producto */
+    height: 350px; /* Establece el alto del elemento */
+  } 
+  
+  .product-card:nth-child(4) { /* Selecciona el cuarto elemento con la clase de tarjeta de producto */
+    height: 350px; /* Establece el alto del elemento */
   }
   
-  .product-card:nth-child(3) {
-    height: 350px;
-  }
-  
-  .product-card:nth-child(4) {
-    height: 350px;
-  }
-  
-  .product-image {
+  .product-image { /* Selecciona el elemento con la clase de imagen del producto */
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%; 
+    object-fit: cover; /* Establece la propiedad object-fit en cover */
   }
   
-  .product-name {
+  .product-name { /* Selecciona el elemento con la clase de nombre del producto */
     font-size: 16px;
     font-weight: 600;
     margin: 10px 12px 4px;
-    line-height: 1.2;
-    color: var(--primary-color);
+    line-height: 1.2; /* Establece la altura de la línea */
+    color: var(--primary-color); /* Establece el color del texto */
   }
-  
-  .product-categorie {
+   
+  .product-categorie { /* Selecciona el elemento con la clase de categoría del producto */
     font-size: 12px;
-    color: var(--medium-gray);
-    margin: 0 12px 5px;
+    color: var(--medium-gray); /* Establece el color del texto */
+    margin: 0 12px 5px; /* Establece la margen del elemento */
   }
   
-  .product-price {
+  .product-price { /* Selecciona el elemento con la clase de precio del producto */
     font-size: 16px;
     font-weight: 700;
     margin: 0 12px 10px;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Establece el color del texto */
   }
   
-  /* Like Button */
-  .product-card::before {
-    content: "♡";
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--dark-gray);
+  .product-card::before { /* Selecciona el elemento con la clase de tarjeta de producto antes de que se agregue el contenido */
+    background-color: black; /* Establece el color de fondo del elemento */
+    border-radius: 50%; /* Establece el radio del elemento */
+    display: flex; /* Establece la propiedad display en flex */
+    color: var(--white); /* Establece el color del texto */
+    content: "♡"; /* Establece el contenido del elemento */
+    position: absolute; /* Establece la posición del elemento */
+    top: 10px; /* Establece la posición vertical del elemento */
+    right: 10px; /* Establece la posición horizontal del elemento */
+    width: 30px; /* Establece el ancho del elemento */
+    height: 30px; /* Establece el alto del elemento */
+    background-color: black; /* Establece el color de fondo del elemento */
+    border-radius: 50%; /* Establece el radio del elemento */
+    display: flex; /* Establece la propiedad display en flex */
+    align-items: center; /* Establece la propiedad align-items en center */
+    justify-content: center; /* Establece la propiedad justify-content en center */
+    font-size: 18px; /* Establece el tamaño del texto */ 
   }
   
-  /* Star Rating */
-  .product-card::after {
-    content: url(/storage/img/star.svg) " 5.0";
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    font-size: 20px;
-    color: var(--primary-color);
+  .product-card::after {  /* Selecciona el elemento con la clase de tarjeta de producto después de que se agregue el contenido */
+    content: url(/storage/img/star.svg) " 5.0"; /* Establece el contenido del elemento */
+    position: absolute; /* Establece la posición del elemento */
+    bottom: 10px; /* Establece la posición vertical del elemento */
+    right: 12px;  /* Establece la posición horizontal del elemento */
+    font-size: 20px; /* Establece el tamaño del texto */
+    color: var(--primary-color); /* Establece el color del texto */
+  }
+
+  .footer { /* Selecciona el elemento con la clase de pie de página */
+    position: sticky; /* Establece la posición del elemento */
+    bottom: 0; /* Establece la posición vertical del elemento */
+    left: 0; /* Establece la posición horizontal del elemento */
+    width: 100%; /* Establece el ancho del elemento */
+    background-color: var(--primary-color); /* Establece el color de fondo del elemento */
+    z-index: 100; /* Establece el índice de capa del elemento */
+    border-radius: 50px;  /* Establece el radio del elemento */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Establece la sombra del elemento */
+  } 
+  
+  .nav-menu { /* Selecciona el elemento con la clase de menú de navegación */
+    padding: 8px 20px; /* Establece la margen del elemento */
   }
   
-  /* Footer */
-  .footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-color);
-    z-index: 100;
-    border-radius: 50px; 
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  .menu-items { /* Selecciona el elemento con la clase de elementos del menú */
+    display: flex; /* Establece la propiedad display en flex */
+    justify-content: space-between; /* Establece la propiedad justify-content en space-between */
+    list-style: none; /* Elimina la lista de elementos */
   }
   
-  /* Navigation Menu */
-  .nav-menu {
-    padding: 8px 20px;
-  }
-  
-  .menu-items {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-  }
-  
-  .menu-item {
+  .menu-item { /* Selecciona el elemento con la clase de elemento del menú */
     font-size: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
+    cursor: pointer; /* Establece el cursor en puntero */
   }
   
-  /* Menu Icons */
-  .menu-item:nth-child(1)::before {
-    content: url(/storage/img/Home.svg);
-    font-size: 24px;
+  .menu-item:nth-child(1)::before { /* Selecciona el elemento con la clase de elemento del menú en el primer hijo */
+    content: url(/storage/img/Home.svg); /* Establece el contenido del elemento */
+    font-size: 24px; /* Establece el tamaño del texto */
   }
   
-  .menu-item:nth-child(2)::before {
-    content: url(/storage/img/Cart.svg);
-    font-size: 24px;
+  .menu-item:nth-child(2)::before { /* Selecciona el elemento con la clase de elemento del menú en el segundo hijo */
+    content: url(/storage/img/Cart.svg); /* Establece el contenido del elemento */
+    font-size: 24px; /* Establece el tamaño del texto */
   }
   
-  .menu-item:nth-child(3)::before {
-    content: url(/storage/img/Favourite.svg);
-    font-size: 24px;
+  .menu-item:nth-child(3)::before { /* Selecciona el elemento con la clase de elemento del menú en el tercer hijo */
+    content: url(/storage/img/Favourite.svg); /* Establece el contenido del elemento */
+    font-size: 24px; /* Establece el tamaño del texto */
   }
   
-  .menu-item:nth-child(4)::before {
-    content: url(/storage/img/Account.svg);
-    font-size: 24px;
+  .menu-item:nth-child(4)::before { /* Selecciona el elemento con la clase de elemento del menú en el cuarto hijo */
+    content: url(/storage/img/Account.svg); /* Establece el contenido del elemento */
+    font-size: 24px; /* Establece el tamaño del texto */
+  }
+  /* Barra footer */
+  .iphone-footer { /* Selecciona el elemento con la clase de pie de página */
+    width: 100%; /* Establece el ancho del elemento */
+    height: auto; /* Establece el alto del elemento */
+    display: block; /* Establece la propiedad display en block */
   }
   
-  /* iPhone Home Indicator */
-  .iphone-footer {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Media Query for iPhone X */
-  @media screen and (min-width: 375px) and (max-height: 812px) {
-    .header {
+  /* Configurar las resoluciones */
+  @media screen and (min-width: 375px) and (max-height: 812px) { /* Selecciona la pantalla con una resolución de 375px a 812px */
+    .header { 
       padding-top: 60px;
     }
     
-    .profile-pic {
+    .profile-pic { /* Selecciona el elemento con la clase de imagen de perfil */
       top: 60px;
     }
     
-    .main-content {
+    .main-content { /* Selecciona el elemento con la clase de contenido principal */
       padding-bottom: 90px;
     }
   }
   
   /* Responsive adjustments */
-  @media screen and (max-width: 374px) {
+  @media screen and (max-width: 374px) { /* Selecciona la pantalla con una resolución de 374px o menos */
     .products-container {
       grid-template-columns: 1fr;
     }
     
-    .product-card {
-      height: auto !important;
+    .product-card { /* Selecciona el elemento con la clase de tarjeta de producto */
+      height: auto; /* Establece el alto del elemento */
     }
-    
-    .product-card:nth-child(odd),
-    .product-card:nth-child(even) {
+     
+    .product-card:nth-child(odd), .product-card:nth-child(even) {  /* Selecciona los elementos con la clase de tarjeta de producto, alternando entre impares y pares */
       height: 280px;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) { /* Selecciona la pantalla con una resolución de 768px o más */
     .header {
-      padding: 30px 40px 20px;
+      padding: 30px 40px 20px; /* Establece el margen superior, lateral y inferior */
     }
     
-    .profile-pic {
+    .profile-pic { /* Selecciona el elemento con la clase de imagen de perfil */
       top: 30px;
       right: 40px;
     }
     
-    .products-container {
+    .products-container { /* Selecciona el elemento con la clase de contenedor de productos */
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     
-    .footer {
+    .footer { /* Selecciona el elemento con la clase de pie de página */
       width: 60%;
     }
   }
   
-  @media screen and (min-width: 1399px) {
+  @media screen and (min-width: 1399px) { /* Selecciona la pantalla con una resolución de 1399px o más */
     /* Eliminar elementos específicos de móvil */
-    .iphone-header,
-    .iphone-footer {
-      display: none;
+    .iphone-header, .iphone-footer { /* Selecciona los elementos con las clases de encabezado y pie de página de iPhone */
+      display: none; /* Oculta los elementos */
     }
     
     body {
-      background-color: var(--secondary-color);
-      padding: 0;
+      background-color: var(--secondary-color); /* Establece el color de fondo */
+      padding: 0; /* Elimina el margen */
     }
     
-    /* Header y navegación */
-    .header {
+    .header { /* Selecciona el elemento con la clase de encabezado */
       padding: 30px 50px 20px;
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: grid; /* Establece el tipo de contenedor */
+      grid-template-columns: 1fr auto; /* Establece el número de columnas */
       grid-template-areas: 
         "greeting profile"
         "name profile" 
         "search search"
-        "nav nav";
+        "nav nav"; /* Establece el área de la grilla */
       align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
+      max-width: 1400px; /* Establece el ancho máximo */
+      margin: 0 auto; /* Establece el margen */
     }
     
     .name{
-      grid-area: name;
-    }
+      grid-area: name; /* Establece el área de la grilla */
+    } 
     .saludo{
       grid-area: greeting;
     }
     
     .name {
-      font-size: 24px;
-      margin-bottom: 5px;
+      font-size: 24px; /* Establece el tamaño de fuente */
+      margin-bottom: 5px; /* Establece el margen inferior */ 
     }
-    
-    .profile-pic {
+     
+    .profile-pic { /* Selecciona el elemento con la clase de imagen de perfil */
       grid-area: profile;
-      position: static;
+      position: static; /* Establece la posición */
       width: 50px;
       height: 50px;
       margin-left: 20px;
     }
     
-    .search-box {
+    .search-box { /* Selecciona el elemento con la clase de caja de búsqueda */
       grid-area: search;
       margin: 20px 0;
     }
     
-    .search-bar {
+    .search-bar { /* Selecciona el elemento con la clase de barra de búsqueda */
       padding: 15px 20px;
       font-size: 16px;
     }
     
-    .filter-button {
+    .filter-button { /* Selecciona el elemento con la clase de botón de filtro */
       width: 50px;
       height: 50px;
     }
     
-    .nav-bar {
+    .nav-bar { /* Selecciona el elemento con la clase de barra de navegación */
       grid-area: nav;
       margin-bottom: 30px;
     }
     
-    .categories {
+    .categories { /* Selecciona el elemento con la clase de categorías */
       justify-content: flex-start;
       gap: 20px;
     }
     
-    .categorie-item {
+    .categorie-item { /* Selecciona el elemento con la clase de elemento de categoría */
       padding: 12px 20px;
       font-size: 16px;
-      transition: all 0.2s ease;
+      transition: all 0.2s ease; /* Establece la transición */
     }
     
-    .categorie-item:hover {
+    .categorie-item:hover { /* Selecciona el elemento con la clase de elemento de categoría con efecto de sombra */
       transform: translateY(-2px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
-    
-    /* Contenido principal */
-    .main-content {
+     
+    .main-content { /* Selecciona el elemento con la clase de contenido principal */
       padding: 0;
       max-width: 1400px;
-      margin-left: 200px;
+      margin-left: 200px; /* Establece la posición del contenido principal */
     }
     
-    /* Grid de productos */
-    .products-container {
+    .products-container { /* Selecciona el elemento con la clase de contenedor de productos */
       height: 500px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
       gap: 20px; 
       padding: 20px; 
-      justify-content: space-evenly;
-    }
+      justify-content: space-evenly; /* Establece la justificación del contenido */
+    } 
     
-    .product-card {
+    .product-card { /* Selecciona el elemento con la clase de tarjeta de producto */
       transition: all 0.3s ease;
       height: 100vh;
     }
     
-    .product-card:hover {
+    .product-card:hover { /* Selecciona el elemento con la clase de tarjeta de producto con efecto de sombra */
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
     
-    .product-name {
+    .product-name { /* Selecciona el elemento con la clase de nombre */
       font-size: 18px;
     }
     
-    .product-categorie {
+    .product-categorie { /* Selecciona el elemento con la clase de categoría */
       font-size: 14px;
     }
     
-    .product-price {
+    .product-price { /* Selecciona el elemento con la clase de precio */
       font-size: 18px;
     }
 
-    .product-image {
+    .product-image { /* Selecciona el elemento con la clase de imagen */
       width: 100%;
       height: 250px; /* Ajusta la altura de la imagen */
       object-fit: cover;
     }
 
-    .product-name,
-    .product-categorie,
-    .product-price {
+    .product-name, .product-categorie, .product-price { /* Selecciona los elementos con las clases de nombre, categoría y precio */
         text-align: left; /* Centra el texto */
     }
-    
-    /* Footer */
-    .footer {
+
+    .footer { /* Selecciona el elemento con la clase de pie de página */
       position: fixed;
       bottom: 20px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%); /* Centra el pie de página */
       width: auto;
       max-width: 400px;
       border-radius: 50px;
     }
     
-    .nav-menu {
+    .nav-menu { /* Selecciona el elemento con la clase de menú de navegación */
       padding: 12px 30px;
     }
     
-    .menu-items {
+    .menu-items { /* Selecciona el elemento con la clase de elementos del menú */
       gap: 40px;
     }
   }
   
-  /* Para pantallas muy grandes */
-  @media screen and (min-width: 1400px) {
-    .header,
-    .main-content {
-      max-width: 1600px;
+@media screen and (min-width: 1400px) { /* Selecciona la pantalla con un ancho mínimo de 1400px */
+    .header, .main-content { /* Selecciona los elementos con las clases de encabezado y contenido principal */
+      max-width: 1600px; /* Ajusta el ancho máximo */
     }
-    
-    .products-container {
-      grid-template-columns: repeat(5, 1fr);
+
+    .products-container { /* Selecciona el elemento con la clase de contenedor de productos */
+      grid-template-columns: repeat(5, 1fr); /* Ajusta el número de columnas */
     }
   }

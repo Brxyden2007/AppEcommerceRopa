@@ -1,276 +1,268 @@
-/* Base Styles */
-* {
+* { /* Se usa para dar formato a la información de la base de datos */ 
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family);
+  box-sizing: border-box; /* Se usa para dar formato a la información de la base de datos */
+  font-family: var(--font-family); /* Se usa para dar formato a la información de la base de datos */
 }
 
-body {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow-x: hidden;
+body { /* Se usa para dar estilo a todo el documento */
+  background-color: var(--secondary-color); /* Se usa para dar estilo a todo el documento */
+  color: var(--text-color); /* Se usa para dar estilo al texto de el documento */
+  min-height: 100vh; /* Se usa para dar estilo/tamaño a todo el documento */
+  display: flex; /* Se usa para dar estilo (flex) a todo el documento */
+  flex-direction: column; /* Se usa para dar estilo de columna (flex) a todo el documento */
+  position: relative; /* Se usa para dar posicion a todo el documento */
+  overflow-x: hidden; /* Para evitar que el scroll horizontal se muestre */
 }
 
-.navbar-container input[type="checkbox"] {
-  display: none;
+.navbar-container input[type="checkbox"] { /* Se usa para dar estilo a los checkbox */
+  display: none; /* Se usa para dar estilo a los checkbox (que no se muestre) */
 }
 
-/* Estilos para el menú hamburguesa */
+/* Se usa este estilo para los items hamburguesa */
 .hamburger-lines {
-  display: none; 
+  display: none; /* Ocultar el menú hamburguesa por defecto */
 }
 
-/* Navbar Styles */
+/* Estilo de los items del menú */
 .navbar {
-  position: fixed;
+  position: fixed; /* Se usa para que el menú se fije en la parte superior */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del menú */
+  opacity: 0; /* Ocultar el menú por defecto */
+  visibility: hidden; /* Ocultar el menú por defecto */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Animación para mostrar el menú */
+  z-index: 999; /* Para que el menú se muestre por encima de otros elementos */
 }
 
-.navbar.active {
-  opacity: 1;
+.navbar.active { /* Se usa para mostrar el menú */
+  opacity: 1; /* Mostrar el menú */
   visibility: visible;
 }
 
-.menu-items {
+.menu-items { /* Se usa para dar estilo a los items del menú */
   position: fixed;
   top: 0;
   left: 0;
   width: 70%;
   max-width: 250px;
   height: 100%;
-  background-color: var(--white);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  background-color: var(--white); /* Color de fondo del menú */
+  transform: translateX(-100%); /* Ocultar el menú por defecto */
+  transition: transform 0.3s ease; /* Animación para mostrar el menú */
   padding: 80px 15px 15px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  overflow-y: auto; /* Para que el menú se ajuste a la altura de la pantalla */
   z-index: 1000;
-  list-style: none;
+  list-style: none; /* Para eliminar los puntos de lista */
 }
 
-.navbar.active .menu-items {
-  transform: translateX(0);
+.navbar.active .menu-items { /* Se usa para mostrar el menú */
+  transform: translateX(0); /* Mostrar el menú */
 }
 
-.menu-items li {
+.menu-items li { /* Se usa para dar estilo a los items del menú */
   margin-bottom: 10px;
-  list-style: none;
-}
+  list-style: none; /* Para eliminar los puntos de lista */
+} 
 
-.menu-items li a {
-  color: var(--primary-color);
+.menu-items li a { /* Se usa para dar estilo a los enlaces del menú */
+  color: var(--primary-color); /* Color del texto del menú */
   text-decoration: none;
   font-size: 1.2rem;
   padding: 10px;
-  display: block;
-  border-radius: var(--small-radius);
-  transition: background-color 0.3s;
+  display: block; /* Para que los enlaces ocupen toda la altura del item */
+  border-radius: var(--small-radius); /* Para dar forma redondeada a los enlaces */
+  transition: background-color 0.3s; /* Animación para cambiar el color de fondo del enlace */
 }
 
-.menu-items li a:hover {
-  background-color: var(--light-gray);
+.menu-items li a:hover { /* Utilizado el hover, ya que usa para dar estilo a los enlaces del menú cuando se pasan por encima */
+  background-color: var(--light-gray); /* Color de fondo del enlace */
 }
 
-/* Estilos para el botón nav-btn */
-.nav-btn {
+/* Estilos del nav boton */
+.nav-btn { /* Se usa para dar estilo al botón del menú */
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--white);
-  border: none;
-  display: flex;
+  background-color: var(--white); /* Color de fondo del botón */
+  border: none; /* Para eliminar el borde del botón */
+  display: flex; /* Para que el botón ocupe toda la altura */
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: pointer; /* Para que el botón se convierta en un puntero */
   box-shadow: var(--shadow);
-  position: relative;
-  z-index: 1001;
+  position: relative; /* Para que el botón se posicione correctamente */
+  z-index: 1002;
 }
-
-.nav-btn::before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--primary-color);
-  box-shadow: 
-      0 6px 0 var(--primary-color),
-      0 -6px 0 var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-.nav-btn span {
-  position: absolute;
+.nav-btn span { /* Se usa para dar estilo al texto del botón */
+  position: absolute; /* Para que el texto se posicione correctamente */
   width: 20px;
   height: 2px;
   background-color: var(--primary-color);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
-  opacity: 0;
+  transform: translate(-50%, -50%); /* Para que el texto se posicione correctamente */
+  transition: all 0.3s ease; /* Animación para cambiar el tamaño del texto */ 
+  opacity: 0; /* Para que el texto no se posicione */
 }
-
-.nav-btn.active::before {
-  transform: rotate(45deg);
-  box-shadow: none;
-}
-
-.nav-btn.active::after {
-  content: "";
-  position: absolute;
+ 
+.nav-btn::before { /* Se usa para dar estilo al icono del botón */
+  content:"---"; /* Para que el icono se muestre (aun este vacio el content) */
+  display: block;
   width: 20px;
+  height: 0.2px;
+  background: var(--primary-color); /* Color del icono */
+  box-shadow: 0 -6px 0 var(--primary-color);  /* Para dar sombra al icono */
+  transition: all 0.3s ease; /* Animación para cambiar el tamaño del icono */
+}
+
+.nav-btn.active::before { /* Para dar estilo al icono del botón cuando está activo */
+  transform: rotate(45deg); /* Para dar forma de "X" al icono (No funcional) */
+  box-shadow: none; /* Para eliminar la sombra del icono */ 
+}
+
+.nav-btn.active::after { /* Para dar estilo al icono del botón cuando está activo */
+  content: ""; /* Para que el icono se muestre (aunque este vacio) */
+  position: absolute; /* Para que el icono se posicione correctamente */
+  width: 20px; /* Ancho del icono */
   height: 2px;
-  background: var(--primary-color);
-  transform: rotate(-45deg);
+  background: var(--primary-color); /* Color del icono */
+  transform: rotate(-45deg); /* Para dar forma de "X" al icono */
 }
 
-.nav-btn.active span {
-  transform: translate(-50%, -50%) scale(0);
+.nav-btn.active span { /* Para dar estilo al texto del botón cuando está activo */
+  transform: translate(-50%, -50%) scale(0); /* Para que el texto se esconda */
 }
 
-/* Header Styles */
-.header {
+.header { /* Para dar estilo a la barra de navegación */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px 20px 20px;
+  justify-content: space-between; /* Para que la barra de navegación se posicione correctamente */
+  padding: 50px 20px 20px; /* Para dar espacio entre la barra de navegación y el contenido */
   position: relative;
   z-index: 10;
-  margin-top: 0;
+  margin-top: 0; /* Para que la barra de navegación no se posicione debajo de la barra de navegación */ 
 }
 
-.back {
+.back { /* Implementado para hacer posible el boton de regresar */
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: var(--white);
   border: none;
-  display: flex;
+  display: flex; /* Para que el boton de regresar se posicione correctamente */
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: var(--shadow);
-  z-index: 1001;
+  z-index: 1021;
 }
 
-.back::before {
-  content: url(/storage/img/back.svg);
-  font-size: 18px;
-  color: var(--primary-color);
+.back::before { /* Para dar estilo al icono del botón de regresar */
+  content: url(/storage/img/back.svg); /* Para que el icono que esta almacenado en storage/img se muestre */
+  font-size: 18px; /* Para dar tamaño al icono */
+  color: var(--primary-color); /* Para dar color al icono */
 }
 
-.title {
+.title { /* Para dar estilo al título */
   font-size: 20px;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Para dar color al título */
 }
 
-/* Main Content */
-.main-content {
-  flex: 1;
+.main-content { /* Para dar estilo al contenido principal */
+  flex: 1; /* Para que el contenido principal se posicione correctamente */
   padding: 20px 20px 80px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Para que el contenido principal se posicione correctamente */
   gap: 25px;
 }
 
-/* Cart Products Section */
-.cart-products {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.cart-products { /* Para dar estilo a los productos del carrito de compras */
+  display: flex; /* Para que los productos del carrito de compras se posicione correctamente */
+  flex-direction: column; /* Para que los productos del carrito de compras se posicione correctamente */
+  gap: 15px; /* Para dar espacio entre los productos del carrito de compras */
 }
 
-.products {
+.products {   /* Para dar estilo a los productos */
   display: flex;
-  align-items: center;
+  align-items: center; /* Para que los productos se posicione correctamente */
   gap: 15px;
-  position: relative;
+  position: relative; /* Para que los productos se posicione correctamente */
 }
 
-.product-img {
+.product-img { /* Para dar estilo a la imagen del producto */
   width: 70px;
   height: 70px;
-  border-radius: var(--small-radius);
-  background-color: var(--light-gray);
+  border-radius: var(--small-radius); /* Para dar forma al producto */
+  background-color: var(--light-gray); /* Para dar color al producto */
   background-size: 6em;
   background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  background-repeat: no-repeat; /* Para que la imagen del producto se muestre correctamente */
+  overflow: hidden; /* Para que la imagen del producto se posicione correctamente */
 }
 
-/* Set background images for products */
-.products:nth-child(1) .product-img {
-  background-image: url('../storage/img/Product1.png');
-}
-
-.products:nth-child(2) .product-img {
-  background-image: url('../storage/img/Product2.png');
-}
-
-.product-details {
-  flex: 1;
-}
-
-.product-details h2 {
+.product-details h2 { /* Para dar estilo al título del producto */
   font-size: 16px;
   font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 2px;
-}
+  color: var(--primary-color); /* Para dar color al título del producto */
+  margin-bottom: 2px; /* Para dar espacio entre el título del producto y el precio */
+} 
 
-.product-details h5 {
+.product-details h5 { /* Para dar estilo al precio del producto */
   font-size: 12px;
   font-weight: 400;
-  color: var(--medium-gray);
-  margin-bottom: 5px;
+  color: var(--medium-gray); /* Para dar color al precio del producto */
+  margin-bottom: 5px; /* Para dar espacio entre el precio del producto y el botón de agregar al carrito */
 }
 
-.price {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--primary-color);
+.product-details { /* Para dar estilo a los detalles del producto */
+  flex: 1; /* Para que los detalles del producto se posicione correctamente */
 }
 
-.product-setting {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.products:nth-child(1) .product-img { /* Para dar estilo a la imagen del primer producto */
+  background-image: url('../storage/img/Product1.png'); /* Para que la imagen del primer producto se muestre */
 }
 
-.setting {
+.products:nth-child(2) .product-img { /* Para dar estilo a la imagen del segundo producto */
+  background-image: url('../storage/img/Product2.png'); /* Para que la imagen del segundo producto se muestre */
+}
+
+.price { /* Para dar estilo al precio del producto */
+  font-size: 16px; /* Para dar tamaño al precio del producto */
+  font-weight: 600; /* Para dar estilo al precio del producto */
+  color: var(--primary-color); /* Para dar color al precio del producto */
+}
+
+.product-setting { /* Para dar estilo al botón de agregar al carrito */
+  display: flex; /* Para que el botón de agregar al carrito se posicione correctamente */
+  align-items: center; /* Para que el botón de agregar al carrito se posicione correctamente */
+  gap: 10px; /* Para dar espacio entre el botón de agregar al carrito y el precio */
+}
+
+.setting { /* Para dar estilo al botón de agregar al carrito */
   width: 24px;
   height: 24px;
-  background: none;
+  background: none; /* Para que el botón de agregar al carrito tenga un fondo transparente */
   border: none;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: absolute; /* Para que el botón de agregar al carrito se posicione correctamente */
+  top: 0; /* Para que el botón de agregar al carrito se posicione correctamente */
+  right: 0; /* Para que el botón de agregar al carrito se posicione correctamente */
 }
 
-.setting::before {
-  content: url(storage/img/menu1.svg);
-  font-size: 20px;
+.setting::before { /* Para dar estilo al botón de agregar al carrito */
+  content: url(storage/img/menu1.svg); /* Para que el botón de agregar al carrito tenga un icono */
+  font-size: 20px; 
   color: var(--dark-gray);
 }
 
-.product-setting button[class="-"],
-.product-setting button[class="+"] {
+.product-setting button[class="-"], 
+.product-setting button[class="+"] { /* Para dar estilo al botón de agregar al carrito */
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -281,47 +273,46 @@ body {
   justify-content: center;
   font-size: 18px;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow); /* Para dar sombra al botón de agregar al carrito */
 }
 
-.product-setting button[class="-"]::before {
-  content: "-";
+.product-setting button[class="-"]::before { /* Para dar estilo al botón de agregar al carrito */
+  content: "-"; /* Para que el botón de agregar al carrito tenga un icono */
 }
 
-.product-setting button[class="+"]::before {
-  content: "+";
+.product-setting button[class="+"]::before { /* Para dar estilo al botón de agregar al carrito */
+  content: "+"; /* Para que el botón de agregar al carrito tenga un icono */
 }
 
-.number {
+.number { /* Para dar estilo al número de productos */
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 500; /* Para dar estilo al número de productos */
   min-width: 15px;
-  text-align: center;
+  text-align: center; /* Para dar estilo al número de productos */
+}
+/* Seccion de Pago */
+.method-payment { /* Para dar estilo a la sección de pago */
+  margin-top: 10px; /* Para dar estilo a la sección de pago */
 }
 
-/* Payment Method Section */
-.method-payment {
-  margin-top: 10px;
-}
-
-.method-title {
+.method-title { /* Para dar estilo al título de la sección de pago */
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Para dar estilo a la sección de pago */
 }
 
-.method-choose {
+.method-choose { /* Para dar estilo a la sección de pago */
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color: var(--light-gray);
-  border-radius: var(--small-radius);
-  box-shadow: var(--shadow);
-  position: relative; 
+  background-color: var(--light-gray); /* Para dar estilo a la sección de pago */
+  border-radius: var(--small-radius); /* Para dar estilo a la sección de pago */
+  box-shadow: var(--shadow); /* Para dar estilo a la sección de pago */
+  position: relative;  /* Para dar estilo a la sección de pago */
 }
 
-.icon-visa {
+.icon-visa { /* Para dar estilo al icono de visa */
   width: 40px;
   height: 25px;
   background-color: #1A1F71;
@@ -333,86 +324,85 @@ body {
   justify-content: center;
 }
 
-.icon-visa::after {
-  content: "VISA";
-  color: white;
+.icon-visa::after { /* Para dar estilo al icono de visa */
+  content: "VISA"; /* Para dar estilo al icono de visa / Como se menciono en el html del checkout, este content pone el texto.*/
+  color: white; /* Para dar estilo al icono de visa */
   font-size: 12px;
-  font-weight: bold;
+  font-weight: bold; /* Para dar estilo al icono de visa */
 }
 
-.method-choose p {
+.method-choose p { /* Para dar estilo al texto/parrafo de la sección de pago */
   flex: 1;
-  font-size: 14px;
-  color: var(--dark-gray);
+  font-size: 14px; /* Para dar estilo / tamaño al texto/parrafo de la sección de pago */
+  color: var(--dark-gray); /* Para dar color de estilo al texto/parrafo de la sección de pago */
 }
 
-.arrow-down::before {
-  content: "";
-  display: inline-block;
+.arrow-down::before { /* Para dar estilo al icono de flecha hacia abajo */
+  content: ""; /* Para dar estilo al icono de flecha hacia abajo */
+  display: inline-block; /* Para dar estilo al icono de flecha hacia abajo */
   width: 16px;
   height: 16px;
-  background-image: url('/storage/img/arrow-down.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url('/storage/img/arrow-down.png'); /* Para dar estilo al icono de flecha hacia abajo */
+  background-size: contain; /* Para dar estilo al icono de flecha hacia abajo */
+  background-repeat: no-repeat; /* Para dar estilo al icono de flecha hacia abajo */
+  background-position: center; /* Para dar estilo al icono de flecha hacia abajo */
 }
 
-/* Total Amount Section */
-.total-amount {
+/* Valores totales Section */
+.total-amount { /* Para dar estilo a la sección de valores totales */
   margin-top: 10px;
-  display: flex;
+  display: flex; /* Para dar estilo a la sección de valores totales */
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 15px; /* Para dar estilo a la sección de valores totales */
+  margin-bottom: 30px; /* Para dar estilo a la sección de valores totales */
 }
 
-.summary-item {
+.summary-item { /* Para dar estilo a cada item de la sección de valores totales */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Para dar estilo a cada item de la sección de valores totales */
 }
 
-.label {
+.label { /* Para dar estilo al texto de la sección de valores totales */
   font-size: 14px;
-  color: var(--dark-gray);
+  color: var(--dark-gray); /* Para dar estilo al texto de la sección de valores totales */
 }
 
-.items-count {
+.items-count { /* Para dar estilo al texto de la sección de valores totales */
   font-size: 14px;
-  color: var(--dark-gray);
+  color: var(--dark-gray);  /* Para dar estilo al texto de la sección de valores totales */
 }
 
-.amount {
+.amount { /* Para dar estilo al texto de la sección de valores totales */
   font-size: 14px;
   font-weight: 500;
   color: var(--primary-color);
   text-align: right;
 }
 
-.subtotal {
+.subtotal { /* Para dar estilo al texto de la sección de valores totales */
   margin-top: 5px;
   padding-top: 15px;
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid var(--light-gray); /* Para dar estilo al texto de la sección de valores totales */
 }
 
 .subtotal .label,
-.subtotal .amount {
+.subtotal .amount { /* Para dar estilo al texto de la sección de valores totales */
   font-size: 16px;
   font-weight: 600;
   color: var(--primary-color);
 }
-
-/* Footer */
-.footer {
-  position: fixed;
+/*Seccion de pie para los valores totales (o Footer) */
+.footer { /* Para dar estilo al pie de la sección de valores totales */
+  position: fixed; /* Para dar estilo al pie de la sección de valores totales */
   bottom: 0;
-  right: 0;
+  right: 0; /* Para dar estilo al pie de la sección de valores totales */
   width: 100%;
   padding: 20px;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Para dar estilo al pie de la sección de valores totales */
 }
 
-.pay {
+.pay { /* Para dar estilo al botón de pago */
   width: 100%;
   height: 55px;
   background-color: var(--primary-color);
@@ -421,21 +411,20 @@ body {
   border-radius: 30px;
   font-size: 16px;
   font-weight: 500;
-  cursor: pointer;
-  box-shadow: var(--shadow);
+  cursor: pointer; /* Para dar estilo al botón de pago */
+  box-shadow: var(--shadow); /* Para dar estilo al botón de pago */
 }
 
-@media (min-width: 768px) {
-  /* Layout General */
+@media (min-width: 768px) { 
+  /* Lo que es el @media.... es usado para el Tamaño y Media usado para ajustar todo lo necesario al codigo, por ende, de aqui para abajo sera un poco repetitivo pero será para arreglar diversas cosas */
   body {
     padding: 0 5%;
   }
 
-  /* Header */
   .header {
     justify-content: space-between;
     padding: 30px 0;
-    max-width: 1200px;
+    max-width: 1200px; /* Para dar estilo y tamaño al header */
     margin: 0 80px 20px;
     background-color: transparent;
   }
@@ -444,24 +433,22 @@ body {
     font-size: 24px;
   }
 
-  /* Main Content */
   .main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 0 100px;
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 350px; /* Para dar estilo al contenido principal */
     gap: 30px;
   }
 
-  /* Cart Products Section */
-  .cart-products {
+  .cart-products { /* Para dar estilo al contenido de los productos */
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  .products {
+  .products { /* Para dar estilo al contenido de los productos */
     padding: 20px;
     border-radius: var(--border-radius);
     background-color: var(--white);
@@ -469,7 +456,7 @@ body {
     transition: all 0.3s ease;
   }
   
-  .products:hover {
+  .products:hover { 
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
   }
@@ -496,15 +483,13 @@ body {
     margin-left: auto;
   }
 
-  /* Right Column Container */
-  .right-column {
+  .right-column { /* Para dar estilo a la columna de la derecha */
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  /* Payment Method Section */
-  .method-payment {
+  .method-payment { /* Para dar estilo al método de pago */
     margin-top: 0;
     background-color: var(--white);
     padding: 20px;
@@ -528,7 +513,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
-  /* Total Amount Section */
   .total-amount {
     background-color: var(--white);
     padding: 25px;
@@ -554,7 +538,6 @@ body {
     font-size: 18px;
   }
 
-  /* Footer */
   .footer {
     max-width: 1200px;
     margin: 0 auto;
@@ -576,17 +559,14 @@ body {
 }
 
 @media (min-width: 1024px) {
-  /* Wrap the right column items */
   .main-content {
     grid-template-columns: 1fr 400px;
   }
 
-  /* Product details */
   .product-details {
     padding-right: 20px;
   }
 
-  /* Larger product images */
   .product-img {
     width: 100px;
     height: 100px;
@@ -594,33 +574,30 @@ body {
 }
 
 @media (min-width: 1440px) {
-  /* Main Content */
   .main-content {
-    grid-template-columns: 1fr 450px;
+    grid-template-columns: 1fr 450px; /* changed from 400px to 450px */
   }
   
-  /* Cart Products Section */
   .product-img {
     width: 120px;
     height: 120px;
-  }
-  
-  .product-details h2 {
-    font-size: 20px;
   }
   
   .price {
     font-size: 20px;
   }
 
-  /* Payment and Total sections */
-  .method-title {
-    font-size: 22px;
-  }
-
   .total-amount .summary-item:last-child .label,
   .total-amount .summary-item:last-child .amount {
     font-size: 20px;
+  }
+
+  .product-details h2 { 
+    font-size: 20px;
+  }
+
+  .method-title {
+    font-size: 22px;
   }
   
   .footer{
@@ -631,7 +608,7 @@ body {
   .menu-items {
     width: 85%;
   }
-  .header {
+  .header { /* changed from 100% to 85% */
     padding-top: 60px;
   }
   
@@ -644,22 +621,23 @@ body {
   }
 }
 
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 374px) {
+/* Usado para pantañas pequeñas */
+@media screen and (max-width: 374px) { /* changed from 375px to 374px */
   .product-img {
     width: 60px;
     height: 60px;
   }
   
-  .product-details h2 {
-    font-size: 14px;
+  .method-title { /* changed from 22px to 20px */
+    font-size: 16px;
   }
-  
+
   .price {
     font-size: 14px;
   }
-  
-  .method-title {
-    font-size: 16px;
+ 
+  .product-details h2 { /* changed from 20px to 18px */
+    font-size: 14px;
   }
+  
 }

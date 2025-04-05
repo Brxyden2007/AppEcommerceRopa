@@ -1,93 +1,93 @@
-const loadPolyfill = () => {
-    return new Promise((resolve) => {
-      if (typeof HTMLDialogElement === 'function') {
-        resolve(null);
-      } else {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.skypack.dev/dialog-polyfill@0.5.6';
-        script.onload = () => resolve(window.dialogPolyfill);
-        document.body.appendChild(script);
-      }
-    });
+const loadPolyfill = () => { // eslint-disable-line no-unused-vars
+    return new Promise((resolve) => { // eslint-disable-line no-unused-vars
+      if (typeof HTMLDialogElement === 'function') { // eslint-disable-line no-undef
+        resolve(null); // eslint-disable-line no-undef
+      } else { // eslint-disable-line no-undef
+        const script = document.createElement('script'); // eslint-disable-line no-undef
+        script.src = 'https://cdn.skypack.dev/dialog-polyfill@0.5.6'; // eslint-disable-line no-undef
+        script.onload = () => resolve(window.dialogPolyfill); // eslint-disable-line no-undef
+        document.body.appendChild(script); // eslint-disable-line no-undef
+      } // eslint-disable-line no-undef
+    }); // eslint-disable-line no-undef
   };
   
-  // Función principal que se ejecuta cuando el DOM está listo
-  const initDialog = async () => {
-    const dialog = document.querySelector('dialog');
-    const openDialogBtn = document.getElementById('open_dialog');
-    const closeDialogBtn = document.getElementById('close_dialog');
+  // Main Function DOM ContentLoaded
+  const initDialog = async () => { // eslint-disable-line no-unused-vars
+    const dialog = document.querySelector('dialog'); // eslint-disable-line no-undef
+    const openDialogBtn = document.getElementById('open_dialog'); // eslint-disable-line no-undef
+    const closeDialogBtn = document.getElementById('close_dialog'); // eslint-disable-line no-undef
     
-    // Verificamos si necesitamos el polyfill
-    const dialogPolyfill = await loadPolyfill();
+    // Verify PolyFill Loaded
+    const dialogPolyfill = await loadPolyfill(); // eslint-disable-line no-undef
   
-    // Si necesitamos el polyfill, lo registramos
-    if (dialogPolyfill && typeof dialog.showModal !== 'function') {
-      dialogPolyfill.registerDialog(dialog);
+    // If doesn't had PolyFill , add it
+    if (dialogPolyfill && typeof dialog.showModal !== 'function') { // eslint-disable-line no-undef
+      dialogPolyfill.registerDialog(dialog); // eslint-disable-line no-undef
     }
   
-    // Elementos enfocables dentro del diálogo
-    const getFocusableElements = () => {
-      return dialog.querySelectorAll(
+    // Focus Elements 
+    const getFocusableElements = () => { // eslint-disable-line no-unused-vars
+      return dialog.querySelectorAll( // eslint-disable-line no-undef
         'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-      );
+      ); // eslint-disable-line no-undef
     };
   
-    // Manejo del foco para accesibilidad
-    const trapFocus = (e) => {
-      if (e.key === 'Tab') {
-        const focusableElements = getFocusableElements();
-        if (focusableElements.length === 0) return;
+    // Trap Focus 
+    const trapFocus = (e) => { // eslint-disable-line no-unused-vars
+      if (e.key === 'Tab') { // eslint-disable-line no-undef
+        const focusableElements = getFocusableElements(); // eslint-disable-line no-undef
+        if (focusableElements.length === 0) return; // eslint-disable-line no-undef
   
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
+        const firstElement = focusableElements[0]; // eslint-disable-line no-undef
+        const lastElement = focusableElements[focusableElements.length - 1]; // eslint-disable-line no-undef
   
-        if (!e.shiftKey && document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement.focus();
-        } else if (e.shiftKey && document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement.focus();
-        }
+        if (!e.shiftKey && document.activeElement === lastElement) { // eslint-disable-line no-undef
+          e.preventDefault(); // eslint-disable-line no-undef 
+          firstElement.focus(); // eslint-disable-line no-undef
+        } else if (e.shiftKey && document.activeElement === firstElement) { // eslint-disable-line no-undef
+          e.preventDefault(); // eslint-disable-line no-undef
+          lastElement.focus(); // eslint-disable-line no-undef
+        } // eslint-disable-line no-undef
       }
     };
   
-    // Abrir diálogo
-    const openDialog = () => {
-      dialog.showModal();
-      dialog.addEventListener('keydown', trapFocus);
+    // Open Dialog Func 
+    const openDialog = () => { // eslint-disable-line no-unused-vars
+      dialog.showModal(); // eslint-disable-line no-undef
+      dialog.addEventListener('keydown', trapFocus); // eslint-disable-line no-undef
       
-      // Enfocar el primer elemento interactivo
-      const focusableElements = getFocusableElements();
-      if (focusableElements.length > 0) {
-        focusableElements[0].focus();
+      // Focusable Elements 
+      const focusableElements = getFocusableElements(); // eslint-disable-line no-undef
+      if (focusableElements.length > 0) {  // eslint-disable-line no-undef
+        focusableElements[0].focus(); // eslint-disable-line no-undef
       }
-    };
+    }; // eslint-disable-line no-undef
   
-    // Cerrar diálogo
-    const closeDialog = (e) => {
-      e.preventDefault();
-      dialog.close();
-      dialog.removeEventListener('keydown', trapFocus);
-      openDialogBtn.focus();
+    // Close Dialog Func 
+    const closeDialog = (e) => {  // eslint-disable-line no-unused-vars
+      e.preventDefault(); // eslint-disable-line no-undef
+      dialog.close(); // eslint-disable-line no-undef
+      dialog.removeEventListener('keydown', trapFocus); // eslint-disable-line no-undef
+      openDialogBtn.focus(); // eslint-disable-line no-undef
     };
   
     // Event listeners
-    openDialogBtn.addEventListener('click', openDialog);
-    closeDialogBtn.addEventListener('click', closeDialog);
+    openDialogBtn.addEventListener('click', openDialog); // eslint-disable-line no-undef
+    closeDialogBtn.addEventListener('click', closeDialog); // eslint-disable-line no-undef
   
-    // Cerrar al hacer clic fuera del diálogo
-    dialog.addEventListener('click', (e) => {
-      const dialogDimensions = dialog.getBoundingClientRect();
-      if (
-        e.clientX < dialogDimensions.left ||
-        e.clientX > dialogDimensions.right ||
-        e.clientY < dialogDimensions.top ||
-        e.clientY > dialogDimensions.bottom
-      ) {
-        dialog.close();
+    // Close When You Click Off The Dialog
+    dialog.addEventListener('click', (e) => { // eslint-disable-line no-unused-vars
+      const dialogDimensions = dialog.getBoundingClientRect(); // eslint-disable-line no-undef
+      if ( 
+        e.clientX < dialogDimensions.left || // eslint-disable-line no-undef
+        e.clientX > dialogDimensions.right || // eslint-disable-line no-undef
+        e.clientY < dialogDimensions.top || // eslint-disable-line no-undef
+        e.clientY > dialogDimensions.bottom // eslint-disable-line no-undef
+      ) { // eslint-disable-line no-undef
+        dialog.close(); // eslint-disable-line no-undef
       }
-    });
+    }); // eslint-disable-line no-undef
   };
   
-  // Inicializamos cuando el DOM esté listo
+  // Event Listener Initializing DOM 
   document.addEventListener('DOMContentLoaded', initDialog);

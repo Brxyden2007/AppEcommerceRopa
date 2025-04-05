@@ -1,422 +1,413 @@
-@import url('variables.css');
-/* Base Styles */
-* {
+@import url('variables.css'); /* Se importa el CSS de variables */
+* { /* Se selecciona todo el contenido */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family);
+    box-sizing: border-box; /* Se establece el box-sizing */
+    font-family: var(--font-family); /* Se establece la fuente */
 }
 
-body {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 5px;
+body { /* Se selecciona el cuerpo */
+    background-color: var(--secondary-color); /* Se establece el color de fondo */
+    color: var(--primary-color); /* Se establece el color de texto */
+    min-height: 100vh; /* Se establece la altura mínima */
+    display: flex; /* Se establece el tipo de disposición */
+    flex-direction: column; /* Se establece la dirección de la disposición */
+    position: relative; /* Se establece la posición */
+    gap: 5px; /* Se establece la separación */
 }
 
-/* Header and Hero Image */
-.header {
-    width: 100%;
-    position: relative;
+.header { /* Se selecciona la cabecera */
+    width: 100%; /* Se establece el ancho */
+    position: relative; /* Se establece la posición */
 }
 
-.hero {
-    width: 100%;
-    height: 450px;
-    background-image: url('../storage/img/Product2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    cursor: default;
+.hero { /* Se selecciona el hero (Que viene siendo la imagen a reproducirse) */
+    width: 100%; /* Se establece el ancho */
+    height: 450px; /* Se establece la altura */
+    background-image: url('../storage/img/Product2.png'); /* Se establece la imagen de fondo */
+    background-size: cover; /* Se establece el tamaño de la imagen */
+    background-position: center; /* Se establece la posición de la imagen */
+    background-repeat: no-repeat; /* Se establece el tipo de repetición */
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Se establece el radio de las esquinas */
+    cursor: default; /* Se establece el cursor */
 }
-.heroforicon {
-    width: 100%;
-    height: 450px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    cursor: default;
+.heroforicon { /** Clase usada para poder dar a inicio lo que vendría siendo el ajuste del detail e implementacion del boton de guardado con JavaScript (exactamente el saveItem.js) **/
+    width: 100; /* Se establece el ancho */
+    height: 450px; /* Se establece la altura */
+    background-size: cover; /* Se establece el tamaño de la imagen */
+    background-position: center; /* Se establece la posición de la imagen */
+    background-repeat: no-repeat; /* Se establece el tipo de repetición */
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Se establece el radio de las esquinas */
+    cursor: default; /* Se establece el cursor */
+    transition: all 1.2s ease; 
 }
-.hero::before {
-    position: absolute;
+.hero::before { /* Se selecciona el contenido antes del elemento */
+    position: absolute; /* Se establece la posición */
+    top: 20px; /* Se establece la posición en la coordenada X */
+    left: 20px; /* Se establece la posición en la coordenada Y */
+    width: 40px; /* Se establece el ancho */
+    height: 40px; /* Se establece la altura */
+    background-color: rgba(255, 255, 255, 0.8); /* Se establece el color de fondo */
+    border-radius: 50%; /* Se establece el radio de las esquinas */
+    display: flex; /* Se establece el tipo de disposición */
+    align-items: center; /* Se establece la alineación */
+    justify-content: center;
+    font-size: 20px; /* Se establece el tamaño de la fuente */
+    color: var(--primary-color); /* Se establece el color de texto */
+    cursor: pointer; /* Se establece el cursor */
+    z-index: 10; /* Se establece el nivel de z */
+}
+.hero-back { /* Se selecciona el contenido de la imagen */
+    content: url(/storage/img/back.svg); /* Se establece el contenido */
+    position: absolute; /* Se establece la posición */
     top: 20px;
     left: 20px;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); /* Se establece el color de fondo */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    color: var(--primary-color);
-    cursor: pointer;
+    color: var(--primary-color); /* Se establece el color de texto */
     z-index: 10;
 }
-.hero-back {
-    content: url(/storage/img/back.svg);
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
+
+/* Estilo cuando el corazón está seleccionado / Usado para dar inicio a que pasara si se selecciona (clickea) el icono de corazon ( que vendría siendo el guardado )*/
+#iconSave.selected { /* Se selecciona el elemento con la clase selected */
+    background-color: rgba(0, 255, 0, 0.8); /* Se establece el color de fondo */
+}
+
+/* Estilo del mensaje de confirmación */
+.message { /* Se selecciona el elemento con la clase message */
+    margin-top: 10px; /* Se establece la distancia entre el elemento y el margen superior */
+    font-size: 24px; /* Se establece el tamaño de la fuente */ 
+    color: green;/* Se establece el tipo de disposición */
+    display: none; /* Inicialmente esta oculto, ya cuando se hace el procedimiento pasara a estar visible */
+    transition: all 5s ease-in-out;  /* Se establece la transición */
+}
+#iconSave { /* Se selecciona el elemento con la id iconSave */
+    content: url(/storage/img/like-2.svg); /* Se establece el contenido */
+    position: absolute; /* Se establece la posición */
+    top: -380px; /* Se establece la posición en la coordenada X */
+    right: 20px; /* Se establece la posición en la coordenada Y */
+    width: 30px; /* Se establece el ancho */
+    height: 40px; /* Se establece la altura */
+    background-color: rgba(255, 255, 255, 0.8); /* Se establece el color de fondo */
+    border-radius: 50%; /* Se establece el radio de las esquinas */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Se establece el color de texto */
+    cursor: pointer; /* Se establece el cursor */
     z-index: 10;
 }
-/* Estilo inicial del corazón */
-
-
-/* Estilo cuando el corazón está seleccionado */
-#iconSave.selected {
-    background-color: rgba(0, 255, 0, 0.8);
-    /* Color verde semi-transparente */
-}
-
-/* Estilo del mensaje */
-.message {
-    margin-top: 10px;
-    font-size: 24px;
-    color: green;
-    display: none;
-    /* Inicialmente oculto */
-}
-#iconSave {
-    content: url(/storage/img/like-2.svg);
-    position: absolute;
-    top: -380px;
-    right: 20px;
-    width: 30px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: var(--primary-color);
-    cursor: pointer;
-    z-index: 10;
-}
-.colorview {
+.colorview { /* Se selecciona el elemento con la clase colorview -- El colorview vendría siendo lo que es el mensaje de cuantas personas han visto el producto */
     color: grey;
-    font-size: 17px;
+    font-size: 17px; /* Se establece el tamaño de la fuente */
 }
 
-#main {
+#main { /* Se selecciona el elemento con la id main */
     flex: 1;
     padding: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Se establece la distancia entre el elemento y el margen inferior */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap: 5px;
+    justify-content: space-evenly; /* Se establece el tipo de disposición */
+    gap: 5px; /* Se establece la distancia entre los elementos */
 }
 
-.product {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.product { /* Se selecciona el elemento con la clase product */
+    display: flex; /* Se establece el tipo de disposición */
+    flex-direction: column; /* Se establece el tipo de disposición */
+    gap: 5px; /* Se establece la distancia entre los elementos */
 }
 
-.name {
+.name { /* Se selecciona el elemento con la clase name */
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Se establece el color de texto */
 }
-
-.rate {
+ 
+.rate { /* Se selecciona el elemento con la clase rate */
     display: flex;
-    align-items: center;
+    align-items: center; /* Se establece el tipo de disposición */
     font-size: 14px;
-    color: var(--dark-gray);
+    color: var(--dark-gray); 
 }
 
-.rate::before {
-    content: "★";
-    color: #FFD700;
-    margin-right: 5px;
+.rate::before { /* Se selecciona el elemento con la clase rate */
+    content: "★"; /* Se establece el contenido / esto esta usado para la calificacion del producto */
+    color: #FFD700; /* Se establece el color */
+    margin-right: 5px; /* Se establece la distancia entre el elemento y el margen derecho */
 }
 
-.cant-products {
-    display: flex;
+.cant-products { /* Se selecciona el elemento con la clase cant-products */
+    display: flex; /* Se establece el tipo de disposición */
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Se establece el tipo de disposición */
     gap: 10px;
-    margin-top: -30px;
+    margin-top: -30px; /* Se establece la distancia entre el elemento y el margen superior */
 }
 
-.cant-products button {
+.cant-products button { /* Se selecciona el elemento con la clase cant-products */
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid var(--light-gray);
-    background-color: var(--white);
+    border: 1px solid var(--light-gray); /* Se establece el color del borde */
+    background-color: var(--white); /* Se establece el color de fondo */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    cursor: pointer;
-    color: var(--primary-color);
+    cursor: pointer; /* Se establece el tipo de cursor */
+    color: var(--primary-color); /* Se establece el color de texto */
 }
 
-.cant-products button:first-child::after {
-    content: "-";
+.cant-products button:first-child::after { /* Se selecciona el elemento con la clase cant-products */
+    content: "-"; /* Se establece el contenido */
 }
 
-.cant-products button:last-child::after {
-    content: "+";
+.cant-products button:last-child::after { /* Se selecciona el elemento con la clase cant-products */
+    content: "+"; /* Se establece el contenido */
 }
 
-.cant-products .number {
-    font-size: 16px;
-    font-weight: 500;
+.cant-products .number { /* Se selecciona el elemento con la clase cant-products */
+    font-size: 16px; /* Se establece el tamaño de fuente */
+    font-weight: 500; /* Se establece el peso de la fuente */
 }
 
-/* Product Information */
-.product-info {
-    color: var(--dark-gray);
-    font-size: 14px;
-    line-height: 1.5;
+.product-info { /* Se selecciona el elemento con la clase product-info */
+    color: var(--dark-gray); /* Se establece el color de texto */
+    font-size: 14px; /* Se establece el tamaño de fuente */
+    line-height: 1.5; /* Se establece la altura de línea */
 }
 
-.read-more {
-    background: none;
-    border: none;
-    color: var(--primary-color);
+.read-more {  /* Se selecciona el elemento con la clase read-more */
+    background: none; /* Se establece el color de fondo */
+    border: none; /* Se establece el color del borde */
+    color: var(--primary-color); /* Se establece el color de texto */
     font-weight: 600;
     font-size: 14px;
     padding: 0;
     margin-top: 5px;
     cursor: pointer;
-    font-family: var(--font-family);
+    font-family: var(--font-family); /* Se establece la familia de fuentes */
     text-align: left;
 }
 
-dialog {
-    width: 85%;
+dialog { /* Se selecciona el elemento con la clase dialog */
+    width: 85%; /* Se establece el ancho */
     max-width: 320px;
     padding: 20px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--light-gray);
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+    border-radius: var(--border-radius); /* Se establece el radio de las esquinas */
+    border: 1px solid var(--light-gray); /* Se establece el color del borde */
+    background-color: var(--white); /* Se establece el color de fondo */
+    box-shadow: var(--shadow); /* Se establece la sombra */
     margin: auto;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Se establece la posición */
 }
 
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+dialog::backdrop { /* Se selecciona el elemento con la clase dialog */
+    background-color: rgba(0, 0, 0, 0.5); /* Se establece el color de fondo */
 }
 
-dialog img {
+dialog img { /* Se selecciona el elemento con la clase dialog */
     width: 60px;
-    height: 60px;
+    height: 60px; /* Se establece el ancho y alto */
     margin: 0 auto 15px;
-    display: block;
+    display: block; /* Se establece el tipo de elemento */
 }
 
-dialog .h2 {
+dialog .h2 { /* Se selecciona el elemento con la clase h2 */
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    text-align: center;
+    margin-bottom: 10px; /* Se establece el margen inferior */
+    color: var(--primary-color); /* Se establece el color de texto */
+    text-align: center; /* Se establece el texto alineado */
 }
 
-dialog p {
+dialog p { /* Se selecciona el elemento con la clase p */
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.4; /* Se establece la altura de línea */
     color: var(--dark-gray);
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 20px; /* Se establece el margen inferior */
+    text-align: center; /* Se establece el texto alineado */
 }
 
-.flex {
-    display: flex;
-    align-items: center;
+.flex { /* Se selecciona el elemento con la clase flex */
+    display: flex; /* Se establece el tipo de elemento */
+    align-items: center; /* Se establece el alineamiento vertical */
 }
 
-.flex-space-between {
-    justify-content: space-between;
+.flex-space-between { /* Se selecciona el elemento con la clase flex-space-between */
+    justify-content: space-between; /* Se establece el alineamiento horizontal */
 }
 
-dialog button {
+dialog button { /* Se selecciona el elemento con la clase button */
     padding: 10px 15px;
-    border-radius: var(--small-radius);
+    border-radius: var(--small-radius); /* Se establece el radio de las esquinas */
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    font-family: var(--font-family);
+    font-family: var(--font-family); /* Se establece la familia de fuentes */
+}
+ 
+dialog button#close_dialog { /* Se selecciona el elemento con la clase close_dialog */
+    background-color: var(--white); /* Se establece el color de fondo */
+    color: var(--primary-color); /* Se establece el color de texto */
+    border: 1px solid var(--light-gray); /* Se establece el borde */
 }
 
-dialog button#close_dialog {
-    background-color: var(--white);
-    color: var(--primary-color);
-    border: 1px solid var(--light-gray);
-}
-
-dialog button.cta {
-    background-color: var(--primary-color);
+dialog button.cta { /* Se selecciona el elemento con la clase cta */
+    background-color: var(--primary-color); /* Se establece el color de fondo */
     color: var(--white);
-    border: none;
+    border: none; /* Se elimina el borde */
+}
+ 
+.product-info p::after { /* Se selecciona el elemento con la clase p */
+    content: none; /* Se elimina el contenido */
 }
 
-.product-info p::after {
-    content: none;
-}
-
-/* Size and Color Selection */
-.choose {
+.choose { /* Se selecciona el elemento con la clase choose */
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* Se establece el tipo de elemento */
+    flex-direction: row; /* Se establece el tipo de elemento */
+    justify-content: space-between; /* Se establece el alineamiento horizontal */
+    align-items: center; /* Se establece el alineamiento vertical */
+    gap: 10px; /* Se establece el espacio entre elementos */
 }
-
-.choose h3 {
+ 
+.choose h3 { /* Se selecciona el elemento con la clase h3 */
     font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-weight: 600; /* Se establece el peso de la fuente */
+    margin-bottom: 5px; /* Se establece el margen inferior */
 }
 
-.sizes {
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+.sizes { /* Se selecciona el elemento con la clase sizes */
+    width: 140px; /* Se establece el ancho */
+    display: flex; /* Se establece el tipo de elemento */
+    flex-direction: column; /* Se establece el tipo de elemento */
+    align-items: flex-start; /* Se establece el alineamiento vertical */
+    gap: 5px; /* Se establece el espacio entre elementos */
 }
 
 .items{
-    display: flex;
-    gap: 2px;
+    display: flex; /* Se establece el tipo de elemento */
+    gap: 2px; /* Se establece el espacio entre elementos */
 }
 
-.size-item {
+.size-item { /* Se selecciona el elemento con la clase size-item */
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--light-gray);
-    background-color: var(--white);
+    border: 1px solid var(--light-gray); /* Se establece el borde */
+    background-color: var(--white); /* Se establece el color de fondo */
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    cursor: pointer;
+    justify-content: center; /* Se establece el alineamiento horizontal */
+    font-size: 14px; /* Se establece el tamaño de la fuente */
+    cursor: pointer; /* Se establece el cursor */
 }
 
-/* Make the L size selected */
-.size-item:nth-child(3) {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
+.size-item:nth-child(3) { /* Se selecciona el elemento con la clase size-item y el tercer hijo */
+    background-color: var(--primary-color); /* Se establece el color de fondo */
+    color: var(--white); /* Se establece el color de texto */
+    border: none; /* Se elimina el borde */
 }
 
-.colors {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+.colors { /* Se selecciona el elemento con la clase colors */
+    display: flex; /* Se establece el tipo de elemento */
+    flex-direction: column; /* Se establece el tipo de elemento */
+    align-items: flex-start; /* Se establece el alineamiento vertical */
+    gap: 5px; /* Se establece el espacio entre elementos */
 }
 
-.items-color{
-    display: flex;
+.items-color{ /* Se selecciona el elemento con la clase items-color */
+    display: flex; /* Se establece el tipo de elemento */
     gap: 2px;
-    align-items: flex-end;
-}
+    align-items: flex-end; /* Se establece el alineamiento vertical */
+} 
 
-.color-item {
-    width: 40px;
+.color-item { /* Se selecciona el elemento con la clase color-item */
+    width: 40px; /* Se establece el ancho */
     height: 40px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    gap: 2px;
+    border-radius: 50%; /* Se establece el radio de curvatura */
+    border: none; /* Se elimina el borde */
+    cursor: pointer; /* Se establece el cursor */
+    gap: 2px; /* Se establece el espacio entre elementos */
 }
 
-/* Color options */
-.color-item:nth-child(1) {
-    background-color: var(--dark-gray);
+.color-item:nth-child(1) { /* Se selecciona el elemento con la clase color-item y el primer hijo */
+    background-color: var(--dark-gray); /* Se establece el color de fondo */
 }
 
-.color-item:nth-child(2) {
-    background-color: #2c3e50; 
+.color-item:nth-child(2) { /* Se selecciona el elemento con la clase color-item y el segundo hijo */
+    background-color: #2c3e50; /* Se establece el color de fondo */
 }
 
-.color-item:nth-child(3) {
-    background-color: var(--primary-color);
+.color-item:nth-child(3) { /* Se selecciona el elemento con la clase color-item y el tercer hijo */
+    background-color: var(--primary-color); /* Se establece el color de fondo */
 }
 
-a{
-    text-decoration: none;
+a{ /* Se selecciona el elemento con la clase a */
+    text-decoration: none; /* Se elimina la decoración */
 }
 
-/* Footer with Add to Cart Button */
-.footer {
+.footer { /* Se selecciona el pie de seccion (footer) */
     padding: 0 20px 0 20px;
     width: 100%;
     height: 60px;
     margin: 0 auto 20px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Se establece el color de fondo */
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:8px;
-    color: var(--white);
+    gap:8px; /* Se establece el espacio entre elementos */
+    color: var(--white); /* Se establece el color de texto */
     font-size: 16px;
     font-weight: 500;
     position: sticky;
     bottom: 20px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow); /* Se establece la sombra */
     margin-top: 10px;
 }
 
-.footer img {
+.footer img { /* Se selecciona el elemento con la clase img dentro del footer */
     width: 24px;
-    height: 24px;
+    height: 24px; /* Se establece el ancho y alto */
 }
 
 .footer p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 5px; /* Se establece el espacio entre elementos */
 }
 
-.footer h5 {
-    font-size: xx-small;
+.footer h5 { /* Se selecciona el elemento con la clase h5 dentro del footer */
+    font-size: xx-small; /* Se establece el tamaño de fuente */
     font-weight: 400;
-    text-decoration: line-through;
-    color: var(--medium-gray);
+    text-decoration: line-through; /* Se establece la decoración */
+    color: var(--medium-gray); /* Se establece el color de texto */
 }
 
-/* iPhone Home Indicator */
-.iphone-footer {
+.iphone-footer { /* Se selecciona el elemento con la clase iphone-footer */
     width: 100%;
-    height: auto;
-    position: fixed;
-    bottom: 0;
+    height: auto; /* Se establece el alto */
+    position: fixed; /* Se establece la posición */
+    bottom: 0; /* Se establece la posición */
     left: 0;
 }
-
-@media screen and (min-width: 375px) and (max-height: 812px) {
+/* Fin de la sección de estilos para el pie de sección */
+/* Sección de estilos para el contenedor de la imagen de fondo */
+@media screen and (min-width: 375px) and (max-height: 812px) { /* Se selecciona la pantalla con un ancho mínimo de 375px y un alto máximo de 812px */
     .hero {
         height: 400px;
     }
@@ -430,30 +421,30 @@ a{
     }
 }
 
-@media screen and (max-width: 374px) and (max-height: 812px) {
-    .hero {
+@media screen and (max-width: 374px) and (max-height: 812px) { /* Se selecciona la pantalla con un ancho máximo de 374px y un alto máximo de 812px */
+    .hero { /* Se selecciona el elemento con la clase hero */
         height: 350px;
     }
     
-    .name {
+    .name { /* Se selecciona el elemento con la clase name */
         font-size: 22px;
     }
     
-    .size-item, .color-item {
+    .size-item, .color-item { /* Se selecciona el elemento con la clase size-item o color-item */
         width: 35px;
         height: 35px;
     }
 
-    dialog {
+    dialog { /* Se selecciona el elemento con la clase dialog */
         width: 90%;
         padding: 15px;
     }
     
-    dialog .h2 {
+    dialog .h2 { /* Se selecciona el elemento con la clase h2 dentro del elemento dialog */
         font-size: 16px;
     }
     
-    dialog p {
+    dialog p { /* Se selecciona el elemento p dentro del elemento dialog */
         font-size: 13px;
     }
     
@@ -462,59 +453,57 @@ a{
         font-size: 13px;
     }
 }
-
-/* ESTILOS PARA ESCRITORIO - VERSIÓN CORREGIDA */
-@media screen and (min-width: 768px) and (max-height: 812px) {
-  body {
+/* Fin de la sección de estilos para el contenedor de la imagen de fondo */
+/* Sección de estilos para el contenedor de la imagen de fondo */   
+@media screen and (min-width: 768px) and (max-height: 812px) { /* Se selecciona la pantalla con un ancho mínimo de 768px y un alto máximo de 812px */
+  body { /* Se selecciona el elemento de tipo body */
       background-color: #f8f9fa;
       padding: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 100vh; /* Se establece el alto mínimo de la página */
   }
   
-  .container {
-      max-width: 1200px;
+  .container { /* Se define el contenedor principal */
+      max-width: 1200px; /* Se establece el ancho máximo del contenedor */
       width: 90%;
       margin: 0 auto;
       background-color: var(--white);
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
+      overflow: hidden; /* Se establece el comportamiento del contenedor */
   }
   
-  .product-detail {
-      display: grid;
+  .product-detail { /* Se define el contenedor de la imagen de fondo */
+      display: grid; /* Se establece el tipo de contenedor */
       grid-template-columns: 1fr 1fr;
-      min-height: 600px;
+      min-height: 600px; /* Se establece el alto mínimo del contenedor */
   }
   
-  /* Sección de imagen - CORREGIDO */
-  .header {
-      position: relative;
-      height: 100%;
-      grid-column: 1;
+  .header { /* Se define el contenedor de la cabecera */
+      position: relative; /* Se establece la posición del contenedor */
+      height: 100%; /* Se establece el alto del contenedor */
+      grid-column: 1; /* Se establece la columna del contenedor */
   }
   
-  .hero {
+  .hero { /* Se define el contenedor de la imagen de fondo */
       height: 100%;
       width: 100%;
       border-radius: 0;
-      background-position: center;
+      background-position: center; /* Se establece la posición de la imagen de fondo */
       background-size: cover;
-      display: block;
+      display: block; /* Se establece el tipo de contenedor */
   }
   
-  /* Sección de información */
-  #main {
+  #main { /* Se define el contenedor principal */
       padding: 3rem;
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      overflow-y: auto;
+      flex-direction: column; /* Se establece la dirección del flujo de contenedor */
+      gap: 1.5rem; /* Se establece el espacio entre los elementos */
+      overflow-y: auto; /* Se establece el comportamiento del contenedor */
       height: 100%;
-      grid-column: 2;
+      grid-column: 2; /* Se establece la columna del contenedor */
   }
   
   .product {

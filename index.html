@@ -4,57 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ecommerce</title>
-    <link rel="icon" type="image/png" href="storage/img/iconPage.webp">
+    <link rel="icon" type="image/png" href="storage/img/iconPage.webp"> <!-- Se agrego para darle el icono a la pagina web-->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- SVG IPHONE -->
-     <img src="storage/img/iphone-home.svg" alt="Icono de carga y hora iphone" class="iphone-header">
-    <!-- Encabezado de la pagina -->
+     <img src="storage/img/iphone-home.svg" alt="iPhone Sup Tools" class="iphone-header">
     <header class="header">
-        <!-- Saludo Inicial -->
+        <!-- Saludo de acorde a la pagina-->
         <div class="saludo">Hello, Welcome👋</div>
 
-        <!-- Nombre del usuario -->
+        <!-- El nombre del usuario estara registrado en el CSS con un content-->
         <div class="name"></div>
-
-         <!-- Foto de perfil -->
+         <!-- Foto de perfil del usuario -->
         <img src="storage/img/Profile.png" 
-        alt="Foto de perfil" 
+        alt="profile-pic" 
         class="profile-pic"
         >
 
-        <!-- Barra de busqueda -->
+        <!-- Barra de Busqueda y sus respectivas cosas para poder hacer funcionar el buscador -->
         <div class="search-box">
-            <div class="row">
+            <div class="row"> <!-- Usado para poder dar una mejor formacion a la barra -->
                 
-
+                <!--Input + Placeholder usado para poder darle un texto a la barra que hara que el usuario empiece a introducir la ropa que desea buscar-->
                 <input type="text" 
+                placeholder="Search clothes" 
                 class="search-bar" 
-                placeholder="Search clothes..." 
                 autocomplete="off"
                 >
 
             </div>
 
-            <div class="results"></div>
-
-            <!-- Boton para filtros -->
+            <div class="results"></div> <!-- La clase results hace que se pueda votar los resultados que da la barra de busquedas -->
             <button class="filter-button"></button>
             
         </div>
 
         
 
-        <!-- Barra para navegar categorias de ropa -->
+        <!-- Esta barra es usada en la superior de la pagina principal con categorías para buscar (no es funcional) -->
         <nav class="nav-bar">
-            <div class="nav-categories">
+            <div class="nav-categories"> <!-- Se uso para poder dar una clase a la lista que se usara para darle mejor forma a la hora de verla -->
                 <ul class="categories">
-                    <li class="categorie-item">All items</li>
-                    <li class="categorie-item">Dress</li>
-                    <li class="categorie-item">T-Shirt</li>
-                    <li class="categorie-item">Pants</li>
+                    <li class="categorie-item">All items</li> <!-- Categoría para buscar todos los items -->
+                    <li class="categorie-item">Dress</li> <!-- Categoría para buscar ropa de vestir -->
+                    <li class="categorie-item">T-Shirt</li> <!-- Categoría para buscar camisetas -->
+                    <li class="categorie-item">Pants</li> <!-- Categoría para buscar pantalones -->
                 </ul>
             </div>
         </nav>
@@ -63,13 +58,13 @@
 
     <!-- Contenido principal de la pagina -->
     <main class="main-content">
-        <!-- Contenedor de productos -->
+        <!-- Contenido de productos + Details -->
         <a href="views/detail.html">
             <div class="products-container">
 
-                <!-- Cards -->
+                <!-- Se usa estas clases para poder darle forma a las imagenes con su respectivo nombre, precio e informacion -->
                 <div class="product-card">
-                    <img src="storage/img/Product1.png" alt="Product Image" class="product-image" href="views/detail.html">             
+                    <img src="storage/img/Product1.png" alt="ImgProduct" class="product-image" href="views/detail.html">             
                     <h2 class="product-name">Modern Light Clothes</h2>
                     <p class="product-categorie">T-Shirt</p>
                     <p class="product-price">$212.99</p>
@@ -77,7 +72,7 @@
                 
                 <div class="product-card">
                     <a href="views/detail.html">
-                        <img src="storage/img/Product2.png" alt="Product Image" class="product-image">
+                        <img src="storage/img/Product2.png" alt="ImgProduct2" class="product-image">
                     </a>
                     <h2 class="product-name">Light Dress Bless</h2>
                     <p class="product-categorie">Dress modern</p>
@@ -86,7 +81,7 @@
     
                 <div class="product-card">
                     <a href="views/detail.html">
-                        <img src="storage/img/Product3.png" alt="Product Image" class="product-image">
+                        <img src="storage/img/Product3.png" alt="ImgProduct3" class="product-image">
                     </a>             
                     <h2 class="product-name">Dark Clothes</h2>
                     <p class="product-categorie">T-Shirt modern</p>
@@ -95,7 +90,7 @@
     
                 <div class="product-card">
                     <a href="views/detail.html">
-                        <img src="storage/img/Product4.png" alt="Product Image" class="product-image">
+                        <img src="storage/img/Product4.png" alt="ImgProduct4" class="product-image">
                     </a>
                     <h2 class="product-name">Dress Yellow</h2>
                     <p class="product-categorie">Dress</p>
@@ -105,16 +100,14 @@
         </a>     
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
 
-        <!-- Menu movil -->
         <div class="nav-menu">
-            <ul class="menu-items">
-                <li class="menu-item">Home</li>
-                <li class="menu-item">Carrito</li>
-                <li class="menu-item">Favorites</li>
-                <li class="menu-item">Profile</li>
+            <ul class="menu-items"> <!-- Se usa la clase para el ajuste de items moviles y tambien se clasifica en ingles y español-->
+                <li class="menu-item">Inicio / Home </li>
+                <li class="menu-item">Carrito de Compras / Cart </li>
+                <li class="menu-item">Lista de Favoritos / Favorites List</li>
+                <li class="menu-item">Perfil / Profile</li>
             </ul>
         </div>
 
@@ -122,7 +115,7 @@
 
     </footer>
 
-    <img src="storage/img/iphone.svg" alt="Iphone bar" class="iphone-footer">
-    <script src="js/components/main.js"></script>
+    <img src="storage/img/iphone.svg" alt="bariPhone" class="iphone-footer"> <!-- Usado para poner la barra de los celulares iPhone debajo-->
+    <script src="js/components/main.js"></script> <!-- Se usa el JS para poder hacer posible que la barra de busqueda tire lo que tiene guardado (cabe aclarar que a la hora de hacer la busqueda no funcionara, pues solo es visual, no funcional.) -->
 </body>
 </html>

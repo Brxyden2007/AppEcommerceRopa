@@ -10,56 +10,52 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="product-detail">
             <header class="header">
-                <!-- Imagen del producto con el boton de regreso y de like -->
+                <!-- Imagen del producto con el boton de regreso y de Guardado -->
                 <div class="hero"></div></a>
-                <a href="../index.html" class="hero-back"></a>
+                <a href="../index.html" class="hero-back"></a> <!-- Boton de regreso para el inicio principal (Se agrego una clase hero-back para hacer posible esto)-->
                 <div style="position: relative;">
-                    <div id="iconSave" class="heroforicon"></div>
+                    <div id="iconSave" class="heroforicon"></div> <!-- Se implemento la id IconSave junto a su clase para poder arreglar lo que es el CSS y JS haciendo posible que el boton de guardar funcionara de forma correcta-->
                 </div>
-                <div id="messageSave" class="message"></div>
+                <div id="messageSave" class="message"></div> <!-- Al igual que el iconSave, se implemento para hacer posible la funcion de guardar-->
             </header>
-
-            <!-- Detalles del producto -->
             <main id="main">
-                <!-- Nombre del producto y su rating -->
+                <!-- Producto y rating -->
                 <div class="product">
                     <h1 class="name">Light Dress Bless</h1>
                     <p class="rate">5.0 (7.932 reviews)</p>
                     <p class="colorview">Vistas por 100 personas</p>
                 </div>
 
-                <!-- Contador de productos -->
+                <!-- Cantidad de productos -->
                 <div class="cant-products">
                     <button class="-"></button>
                     <p class="number">1</p>
                     <button class="+"></button>
                 </div>
 
-                <!-- Informacion del producto -->
+                <!-- Informacion del producto en el Details -->
                 <div class="product-info">
                     <p>Its simple and elegant shape makes it perfect for
                         those of you who like you who want minimslist
                         clothes
                     </p>
-                    <button id="open_dialog" class="read-more">Read More...</button>
-                    <dialog aria-labelledby="dialog_title" aria-describedby="dialog_description">
-                        <img src="https://native-dialog.surge.sh/location-service.svg" alt="Illustration of Location Services" />
-                        <h2 id="dialog_title" class="h2">Use location services?</h2>
+                    <button id="open_dialog" class="read-more">Read More...</button> <!-- Se uso este boton como guia para poder desarrollar el Open Dialog (o Read More...)-->
+                    <dialog aria-labelledby="dialog_title" aria-describedby="dialog_description"> <!-- Aqui se introduce el texto que se necesita y se pone a la hora de hacer el dialogo-->
+                        <img src="/storage/img/Product2.png" alt="Picture Read More Img Description" />
+                        <h2 id="dialog_title" class="h2">Wanna know more about this cloth?</h2>
                         <p id="dialog_description">
-                          In order to give directional instructions, we kindly ask you to turn
-                          on the location services.
+                          This cloth is the Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil eum reiciendis atque delectus molestiae perspiciatis. Ipsam rerum architecto eum, praesentium sint minima cum quo quis illo aspernatur quae et?
                         </p>
                         <div class="flex flex-space-between">
-                          <button id="close_dialog">Close</button>
-                          <button id="confirm_dialog" class="cta">Confirm</button>
+                          <button id="close_dialog">Close</button> <!-- Para cerrar el dialogo -->
+                          <button id="confirm_dialog" class="cta">Confirm</button> <!-- Confirmar el dialogo -->
                         </div>
                       </dialog>
                 </div>
 
-                <!-- Eleccion de tamano y colores -->
+                <!-- Tamaño de ropa junto a sus tipos de colores -->
                 <div class="choose">
 
                     <div class="sizes">
@@ -75,7 +71,7 @@
                         
                     </div>
 
-                    <div class="colors">
+                    <div class="colors"> <!-- Elige el tipo de color en la pagina para la ropa -->
 
                         <h3>Color</h3>
 
@@ -90,10 +86,10 @@
                     
                 </div>
 
-                <!-- Footer/Boton de agregar al carrito -->
+                <!-- Se implemento el footer para poder agregar las cosas al carrito -->
                 <a href="checkout.html">
                     <footer class="footer">
-                        <img src="/storage/img/cart-detail.svg" alt="Carrito Icono">
+                        <img src="/storage/img/cart-detail.svg" alt="carIcon">
                         <p>Add to Cart | $162.99 <h5>$190.99</h5></p>
                     </footer>
                 </a>
@@ -101,8 +97,8 @@
         </div>
     </div>
     
-    <img src="/storage/img/iphone.svg" alt="Iphone bar" class="iphone-footer">
-    <script src="/js/components/detail.js"></script>
-    <script src="/js/components/saveItem.js"></script>
+    <img src="/storage/img/iphone.svg" alt="bariPhone" class="iphone-footer">
+    <script src="/js/components/detail.js"></script> <!-- Se implemento el JS de Details para poder ejecutar las funciones -->
+    <script src="/js/components/saveItem.js"></script> <!-- Se implemento el JS de saveItem para poder hacer el guardado al darle al corazon-->
 </body>
 </html>
